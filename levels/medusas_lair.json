@@ -1,0 +1,39 @@
+{
+  "id": "medusas_lair", "name": "Medusa's Lair", "music": "map", "start_scene": "lair", "unlocks": ["full_moon"],
+  "scenes": {"lair": {
+    "name": "Medusa's Lair", "background": "medusas_lair", "world_width": 15100,
+    "bounds": [80, 15020, 420, 625], "spawn": [180, 545], "camera_follow": true,
+    "props": {
+      "entrance_arch": 150, "stone_wall_end": 1450, "handshake_statues": 2050,
+      "green_water": [[2600, 3900], [6000, 6850]], "waterfall": 6850,
+      "stairs": [[4200, 4850], [7650, 8250], [9100, 9750]],
+      "broken_mirrors": [7400, 11150], "broken_window": 13950, "medusa_x": 14250
+    },
+    "breakables": [
+      {"id": "snakey_statue_one", "kind": "snakey_statue", "x": 4300, "y": 555, "health": 4, "break_notice": "MONEY BAG FOUND"},
+      {"id": "fishman_statue_meat", "kind": "fishman_statue", "x": 4700, "y": 555, "health": 4, "output": {"type": "food", "kind": "meat", "heal_amount": 90}},
+      {"id": "fishman_statue_apple", "kind": "fishman_statue", "x": 5550, "y": 515, "health": 4, "output": {"type": "food", "kind": "apple", "heal_amount": 35}},
+      {"id": "snakey_statue_two", "kind": "snakey_statue", "x": 7080, "y": 555, "health": 4, "break_notice": "MONEY BAG FOUND"},
+      {"id": "fishman_statue_food", "kind": "fishman_statue", "x": 7350, "y": 555, "health": 4, "output": {"type": "random_food"}},
+      {"id": "snakey_statue_three", "kind": "snakey_statue", "x": 10650, "y": 555, "health": 4, "break_notice": "MONEY BAG FOUND"},
+      {"id": "snakey_statue_four", "kind": "snakey_statue", "x": 10900, "y": 555, "health": 4, "break_notice": "MONEY BAG FOUND"}
+    ],
+    "loot": [
+      {"id": "statue_gold_one", "kind": "gold_bag", "x": 4300, "y": 555, "gold": 5, "visible_after_breakable": "snakey_statue_one"},
+      {"id": "statue_gold_two", "kind": "gold_bag", "x": 7080, "y": 555, "gold": 5, "visible_after_breakable": "snakey_statue_two"},
+      {"id": "statue_gold_three", "kind": "gold_bag", "x": 10650, "y": 555, "gold": 5, "visible_after_breakable": "snakey_statue_three"},
+      {"id": "statue_gold_four", "kind": "gold_bag", "x": 10900, "y": 555, "gold": 5, "visible_after_breakable": "snakey_statue_four"}
+    ],
+    "story_events": [{"id": "medusa_reveal", "trigger_x": 12350, "camera_x": 13400, "duration": 8.4, "effects": [{"at": 5.1, "kind": "shake", "duration": 0.28, "strength": 0.2}]}],
+    "waves": [
+      {"id": "water_fishmen", "trigger_x": 2600, "enemy": "fishman", "count": 3, "spawn_points": [[3020, 480], [3210, 550], [3400, 600]], "entry": "water_rise", "entry_duration": 1.35},
+      {"id": "stair_mix_one", "trigger_x": 5050, "count": 3, "types": ["fishman", "fishman", "snakey"], "spawn_points": [[5500, 475], [5680, 555], [5860, 605]]},
+      {"id": "waterfall_mix", "trigger_x": 6750, "count": 3, "types": ["snakey", "snakey", "fishman"], "spawn_points": [[7200, 480], [7380, 555], [7560, 605]]},
+      {"id": "mirror_mix", "trigger_x": 7600, "count": 3, "types": ["fishman", "fishman", "snakey"], "spawn_points": [[8200, 480], [8380, 555], [8560, 605]]},
+      {"id": "wall_stair_fishmen", "trigger_x": 9000, "enemy": "fishman", "count": 2, "spawn_points": [[9520, 485], [9700, 570]]},
+      {"id": "wall_stair_snakeys", "trigger_x": 9900, "enemy": "snakey", "count": 3, "spawn_points": [[10340, 470], [10520, 545], [10700, 605]]}
+    ],
+    "boss": {"kind": "medusa", "name": "MEDUSA", "trigger_x": 12600, "x": 14250, "y": 520, "health": 330, "requires_story": "medusa_reveal", "requires_clear": true},
+    "doors": []
+  }}
+}

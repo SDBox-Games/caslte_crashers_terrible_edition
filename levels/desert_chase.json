@@ -1,0 +1,15 @@
+{
+  "id": "desert_chase", "name": "Desert Chase", "music": "map", "start_scene": "chase", "unlocks": ["sand_castle_interior"],
+  "scenes": {"chase": {
+    "name": "Desert Chase", "background": "desert_chase", "world_width": 9050,
+    "bounds": [100, 8820, 435, 620], "spawn": [470, 535], "camera_follow": true,
+    "waves": [
+      {"id": "first_patrol", "trigger_x": 2050, "count": 4, "types": ["saracen", "saracen", "saracen", "saracen"], "spawn_points": [[2400, 465], [2490, 565], [2610, 500], [2720, 580]]},
+      {"id": "bomb_patrol", "trigger_x": 3400, "count": 5, "types": ["saracen", "saracen", "chain_guard", "saracen", "saracen"], "spawn_points": [[3740, 460], [3840, 565], [3970, 520], [4090, 475], [4200, 580]]},
+      {"id": "zebra_rider", "trigger_x": 5650, "after_story": "zebra_pursuit", "count": 1, "types": ["saracen"], "spawn_points": [[6080, 520]], "mounts": {"0": "camel"}}
+    ],
+    "story_events": [{"id": "zebra_pursuit", "trigger_x": 4750, "camera_x": 4920, "duration": 5.2, "effects": [{"at": 1.7, "kind": "shake", "duration": 0.18, "strength": 0.15}]}],
+    "props": {"crashed_ufo_x": 175, "escape_pod_x": 470, "dead_alien_x": 700, "sinkholes": [6650, 6950, 7250, 7550], "castle_x": 8500, "scorpion_start": 2050},
+    "doors": [{"x": 8640, "y": 520, "radius": 125, "label": "SAND CASTLE", "target_level": "sand_castle_interior", "requires_clear": true}]
+  }}
+}

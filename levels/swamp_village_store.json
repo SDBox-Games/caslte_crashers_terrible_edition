@@ -1,0 +1,15 @@
+{
+  "id": "swamp_village_store", "name": "Swamp Village Store", "music": "thieves_store", "start_scene": "shop", "unlocks": [],
+  "scenes": {"shop": {
+    "name": "Swamp Village Store", "background": "swamp_store", "world_width": 2300,
+    "bounds": [80, 2220, 430, 625], "spawn": [170, 545], "camera_follow": true, "waves": [],
+    "shop": [
+      {"id": "pig", "name": "Pig", "collection": "pets", "x": 390, "y": 530, "cost": 22},
+      {"id": "health_potion", "name": "Health Potion", "collection": "items", "x": 790, "y": 530, "cost": 5, "maximum": 5},
+      {"id": "bomb", "name": "Bomb", "collection": "items", "x": 1190, "y": 530, "cost": 7, "maximum": 9},
+      {"id": "swamp_sword", "name": "Swamp Sword", "collection": "weapons", "x": 1590, "y": 530, "cost": 24}
+    ],
+    "props": {"shopkeeper": 990},
+    "doors": [{"x": 2180, "y": 515, "radius": 95, "label": "WORLD MAP", "complete_level": true}]
+  }}
+}

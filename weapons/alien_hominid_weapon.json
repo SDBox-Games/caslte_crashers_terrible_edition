@@ -1,0 +1,5 @@
+{
+  "id": "alien_hominid_weapon",
+  "name": "Alien Hominid Blaster",
+  "modifiers": {"strength": 2, "defense": -1, "magic": 2, "agility": 0}
+}

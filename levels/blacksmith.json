@@ -1,0 +1,76 @@
+{
+  "id": "blacksmith",
+  "name": "Blacksmith",
+  "music": "blacksmith",
+  "start_scene": "yard",
+  "scenes": {
+    "yard": {
+      "name": "Blacksmith Yard",
+      "background": "blacksmith_yard",
+      "world_width": 2100,
+      "bounds": [70, 2030, 430, 625],
+      "spawn": [220, 545],
+      "camera_follow": true,
+      "doors": [
+        {
+          "x": 610,
+          "y": 505,
+          "radius": 115,
+          "label": "PET HOUSE",
+          "target": "pet_house",
+          "target_spawn": [170, 548]
+        },
+        {
+          "x": 1580,
+          "y": 505,
+          "radius": 140,
+          "label": "WEAPON FROG",
+          "target": "frog_armory",
+          "target_spawn": [170, 548]
+        }
+      ]
+    },
+    "pet_house": {
+      "name": "Pet House",
+      "background": "pet_house",
+      "world_width": 1180,
+      "bounds": [70, 1110, 430, 625],
+      "spawn": [170, 548],
+      "camera_follow": false,
+      "doors": [
+        {
+          "x": 1050,
+          "y": 505,
+          "radius": 100,
+          "label": "EXIT",
+          "target": "yard",
+          "target_spawn": [720, 548]
+        }
+      ],
+      "pets": [
+        {"id": "cardinal", "name": "Cardinal", "ability": "Finds hidden items", "x": 350, "y": 515, "color": [224, 67, 62]},
+        {"id": "owlet", "name": "Owlet", "ability": "Carries fruit", "x": 560, "y": 495, "color": [176, 127, 77]},
+        {"id": "rammy", "name": "Rammy", "ability": "Knocks enemies down", "x": 765, "y": 525, "color": [224, 218, 190]}
+      ]
+    },
+    "frog_armory": {
+      "name": "Weapon Frog",
+      "background": "frog_armory",
+      "world_width": 1600,
+      "bounds": [70, 1530, 430, 625],
+      "spawn": [170, 548],
+      "camera_follow": true,
+      "doors": [
+        {
+          "x": 1490,
+          "y": 505,
+          "radius": 100,
+          "label": "EXIT",
+          "target": "yard",
+          "target_spawn": [1400, 548]
+        }
+      ],
+      "dynamic_weapons": true
+    }
+  }
+}

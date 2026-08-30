@@ -1,0 +1,41 @@
+{
+  "id": "alien_ship",
+  "name": "Alien Ship",
+  "music": "map",
+  "start_scene": "escape_deck",
+  "unlocks": ["desert_chase"],
+  "scenes": {
+    "escape_deck": {
+      "name": "Alien Ship",
+      "background": "alien_ship",
+      "world_width": 9300,
+      "bounds": [230, 9140, 430, 620],
+      "spawn": [390, 535],
+      "camera_follow": true,
+      "props": {
+        "rear_laser": 245,
+        "control_room": [1750, 3380],
+        "window": [1980, 3100],
+        "chairs": [2350, 2580, 2810],
+        "alarm": 3140,
+        "prisoner": 4850,
+        "vents": [6750, 6940, 7130, 7320],
+        "escape_pods": [8460, 8690, 8920]
+      },
+      "breakables": [
+        {"id":"laser_box_one","kind":"laser_box","x":1170,"laser_x":1050,"y":515,"health":1,"blocking":true,"block_radius":120,"requires":"projectile","break_notice":"LASER GATE DISABLED"},
+        {"id":"laser_box_two","kind":"laser_box","x":4390,"laser_x":4100,"y":515,"health":1,"blocking":true,"block_radius":120,"requires":"projectile","break_notice":"PRISON BLOCK OPEN"},
+        {"id":"laser_box_three","kind":"laser_box","x":5820,"laser_x":5700,"y":515,"health":1,"blocking":true,"block_radius":120,"requires":"projectile","break_notice":"ESCAPE CORRIDOR OPEN"}
+      ],
+      "story_events": [
+        {"id":"alien_alarm","trigger_x":2150,"camera_x":1980,"duration":6.4,"effects":[{"at":3.0,"kind":"shake","duration":0.3,"strength":0.24}]}
+      ],
+      "waves": [
+        {"id":"bridge_crew","trigger_x":2150,"after_story":"alien_alarm","count":3,"types":["alien_hominid","alien_hominid","alien_hominid"],"spawn_points":[[2350,510],[2580,535],[2810,505]]},
+        {"id":"corridor_three","trigger_x":6250,"count":3,"types":["alien_hominid","alien_hominid","alien_hominid"],"spawn_points":[[6500,470],[6630,540],[6760,585]]},
+        {"id":"pod_guards","trigger_x":7600,"count":4,"types":["alien_hominid","alien_hominid","alien_hominid","alien_hominid"],"spawn_points":[[7840,455],[7960,515],[8080,575],[8200,495]]}
+      ],
+      "doors": []
+    }
+  }
+}

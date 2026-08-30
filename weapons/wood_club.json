@@ -1,0 +1,5 @@
+{
+  "id": "wood_club",
+  "name": "Wooden Club",
+  "modifiers": {"strength": 1, "defense": 2, "magic": 0, "agility": -1}
+}

@@ -1,0 +1,5 @@
+{
+  "id": "stoveface", "display_name": "Stoveface", "title": "Moon Mountain Guard", "playable": true, "roster_index": 52,
+  "armor": [67, 69, 73], "accent": [151, 80, 48], "glow": [236, 111, 55], "emblem": "STOVE",
+  "texture_dir": "stoveface", "starting_weapon": "stoveface_mace", "base_health": 118, "max_mana": 0, "has_magic": false
+}

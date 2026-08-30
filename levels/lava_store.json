@@ -1,0 +1,27 @@
+{
+  "id": "lava_store",
+  "name": "Lava Store",
+  "music": "thieves_store",
+  "start_scene": "volcano_shop",
+  "unlocks": [],
+  "scenes": {
+    "volcano_shop": {
+      "name": "Lava Store",
+      "background": "lava_store",
+      "world_width": 2450,
+      "bounds": [80, 2370, 430, 625],
+      "spawn": [170, 545],
+      "camera_follow": true,
+      "waves": [],
+      "shop": [
+        {"id": "wooden_bat", "name": "Wooden Bat", "collection": "weapons", "x": 380, "y": 530, "cost": 18},
+        {"id": "bomb", "name": "Bomb", "collection": "items", "x": 700, "y": 530, "cost": 4, "maximum": 9},
+        {"id": "health_potion", "name": "Health Potion", "collection": "items", "x": 1020, "y": 530, "cost": 5, "maximum": 5},
+        {"id": "sandwich", "name": "Sandwich", "collection": "items", "x": 1340, "y": 530, "cost": 6, "maximum": 9},
+        {"id": "spiny", "name": "Spiny", "collection": "pets", "x": 1740, "y": 530, "cost": 22}
+      ],
+      "props": {"shopkeeper": 1180},
+      "doors": [{"x": 2320, "y": 515, "radius": 95, "label": "WORLD MAP", "complete_level": true}]
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "id": "magic_wand",
+  "name": "Magic Wand",
+  "modifiers": {"strength": -1, "defense": 0, "magic": 3, "agility": 1}
+}

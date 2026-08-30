@@ -1,0 +1,46 @@
+{
+  "id": "wizard_castle_takeoff",
+  "name": "Wizard Castle Takeoff",
+  "music": "map",
+  "mode": "wizard_takeoff",
+  "start_scene": "ruined_village",
+  "unlocks": ["wizard_castle_interior"],
+  "scenes": {
+    "ruined_village": {
+      "name": "Wizard Castle Takeoff · Ruined Village",
+      "background": "wizard_ruins",
+      "world_width": 5900,
+      "bounds": [90, 5650, 430, 625],
+      "spawn": [190, 545],
+      "camera_follow": true,
+      "takeoff_trigger_x": 3340,
+      "takeoff_camera_x": 3500,
+      "takeoff_duration": 7.4,
+      "flight_duration": 30.0,
+      "props": {
+        "broken_houses": [650, 1530, 2440],
+        "skeletons": [905, 1760, 2700],
+        "purple_crystals": [2050, 3010],
+        "well": 2870,
+        "takeoff_seam": 3650,
+        "crystal_cave": 4400,
+        "boss_line": 4000
+      },
+      "waves": [],
+      "doors": []
+    },
+    "castle_landing": {
+      "name": "Wizard Castle Takeoff · Castle Landing",
+      "background": "wizard_landing",
+      "world_width": 1900,
+      "bounds": [90, 1810, 430, 625],
+      "spawn": [1050, 545],
+      "camera_follow": true,
+      "props": {"castle_entrance": 1510},
+      "waves": [],
+      "doors": [
+        {"x": 1510, "y": 515, "radius": 165, "label": "WIZARD CASTLE INTERIOR", "style": "wizard_entrance", "target_level": "wizard_castle_interior"}
+      ]
+    }
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "id": "pipistrellos_cave",
+  "name": "Pipistrello's Cave",
+  "music": "tall_grass_field",
+  "start_scene": "blood_tunnel",
+  "unlocks": ["industrial_castle", "flowery_field"],
+  "scenes": {
+    "blood_tunnel": {
+      "name": "Pipistrello's Cave",
+      "background": "pipistrellos_cave",
+      "world_width": 8800,
+      "bounds": [80, 8720, 420, 625],
+      "spawn": [220, 545],
+      "camera_follow": true,
+      "elevation": [
+        {"from": 900, "to": 1580, "start": 0, "end": -145},
+        {"from": 2260, "to": 2760, "start": -145, "end": 0}
+      ],
+      "props": {
+        "skeleton": 410,
+        "blood_drips": [300, 430, 580],
+        "ramp": [900, 2760],
+        "boss_arena": [6100, 8400],
+        "treasure_exit": 8460
+      },
+      "story_events": [
+        {
+          "id": "pipistrello_arrival",
+          "trigger_x": 5900,
+          "camera_x": 6170,
+          "duration": 6.4,
+          "after_wave_clear": "straight_slimes",
+          "effects": [{"at": 4.65, "kind": "shake", "duration": 0.55, "strength": 0.55}]
+        }
+      ],
+      "waves": [
+        {
+          "id": "ramp_slimes",
+          "trigger_x": 720,
+          "count": 4,
+          "enemy": "black_slime",
+          "spawn_points": [[600, 520], [1490, 500], [820, 585], [1840, 555]],
+          "entry": "slime_drop",
+          "entry_durations": [0.65, 1.25, 1.9, 2.55]
+        },
+        {
+          "id": "straight_slimes",
+          "trigger_x": 2920,
+          "count": 6,
+          "enemy": "black_slime",
+          "spawn_points": [[2640, 515], [3440, 565], [3060, 500], [3260, 590], [3740, 500], [4020, 575]],
+          "entry": "slime_drop",
+          "entry_durations": [0.55, 1.0, 1.45, 1.9, 2.35, 2.8]
+        }
+      ],
+      "boss": {
+        "kind": "pipistrello",
+        "name": "PIPISTRELLO",
+        "trigger_x": 6200,
+        "x": 7180,
+        "y": 430,
+        "health": 280,
+        "requires_clear": true,
+        "requires_story": "pipistrello_arrival"
+      },
+      "doors": [
+        {
+          "x": 8460,
+          "y": 520,
+          "radius": 135,
+          "label": "TREASURE ROOM",
+          "style": "cave",
+          "target": "treasure_room",
+          "target_spawn": [190, 545],
+          "requires_clear": true,
+          "requires_flag": "pip_procession_done"
+        }
+      ]
+    },
+    "treasure_room": {
+      "name": "Pipistrello's Treasure",
+      "background": "pipistrello_treasure",
+      "world_width": 2700,
+      "bounds": [80, 2620, 420, 625],
+      "spawn": [190, 545],
+      "camera_follow": true,
+      "props": {
+        "gold_piles": [420, 720, 1040, 1380, 1710, 2020],
+        "real_exit": 2530
+      },
+      "loot": [
+        {"id": "pip_gold_01", "kind": "gold_bag", "x": 430, "y": 515, "gold": 4},
+        {"id": "pip_gold_02", "kind": "gold_bag", "x": 610, "y": 580, "gold": 4},
+        {"id": "pip_gold_03", "kind": "gold_bag", "x": 790, "y": 500, "gold": 5},
+        {"id": "pip_gold_04", "kind": "gold_bag", "x": 970, "y": 575, "gold": 4},
+        {"id": "pip_gold_05", "kind": "gold_bag", "x": 1150, "y": 510, "gold": 5},
+        {"id": "pip_gold_06", "kind": "gold_bag", "x": 1330, "y": 585, "gold": 4},
+        {"id": "pip_gold_07", "kind": "gold_bag", "x": 1510, "y": 500, "gold": 5},
+        {"id": "pip_gold_08", "kind": "gold_bag", "x": 1690, "y": 570, "gold": 4},
+        {"id": "pip_gold_09", "kind": "gold_bag", "x": 1870, "y": 515, "gold": 5},
+        {"id": "pip_gold_10", "kind": "gold_bag", "x": 2050, "y": 585, "gold": 4}
+      ],
+      "waves": [],
+      "doors": [
+        {
+          "x": 2530,
+          "y": 520,
+          "radius": 125,
+          "label": "EXIT TO MAP",
+          "style": "cave",
+          "complete_level": true,
+          "requires_flag": "pip_results_done"
+        }
+      ]
+    }
+  }
+}

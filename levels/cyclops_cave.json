@@ -1,0 +1,108 @@
+{
+  "id": "cyclops_cave",
+  "name": "Cyclops' Cave",
+  "music": "map",
+  "start_scene": "cave_road",
+  "unlocks": ["cyclops_gate"],
+  "scenes": {
+    "cave_road": {
+      "name": "Cyclops' Cave",
+      "background": "cyclops_cave",
+      "world_width": 5300,
+      "bounds": [80, 5180, 420, 625],
+      "spawn": [220, 535],
+      "camera_follow": true,
+      "props": {
+        "entrance": 80,
+        "lights": [1450, 2310, 3205],
+        "damaged_cart": 1740,
+        "mushrooms": [2580, 2805, 3025],
+        "volcano": 4110,
+        "golden_eye_arch": 4960
+      },
+      "story_events": [
+        {
+          "id": "damaged_cart_repair",
+          "trigger_x": 1450,
+          "camera_x": 1110,
+          "entrance_camera_x": 0,
+          "duration": 10.4,
+          "effects": [
+            {"at": 3.15, "kind": "shake", "strength": 0.18, "duration": 0.2, "x": 80, "radius": 1500},
+            {"at": 5.0, "kind": "shake", "strength": 0.25, "duration": 0.24, "x": 80, "radius": 1500}
+          ]
+        }
+      ],
+      "waves": [
+        {
+          "id": "cart_repair_ambush",
+          "trigger_x": 1450,
+          "after_story": "damaged_cart_repair",
+          "count": 11,
+          "types": [
+            "thief", "thief", "thief", "thief",
+            "conehead", "conehead", "conehead", "conehead", "conehead", "conehead", "conehead"
+          ],
+          "spawn_points": [
+            [1610, 470], [1710, 570], [1830, 490], [1920, 575],
+            [70, 450], [120, 535], [175, 600], [235, 475], [290, 560], [350, 430], [410, 520]
+          ],
+          "entries": [null, null, null, null, "rush_right", "rush_right", "rush_right", "rush_right", "rush_right", "rush_right", "rush_right"],
+          "entry_durations": [0, 0, 0, 0, 1.1, 1.25, 1.4, 1.55, 1.7, 1.85, 2.0]
+        },
+        {
+          "id": "lamp_slime_ambush",
+          "trigger_x": 3205,
+          "count": 9,
+          "types": [
+            "conehead", "conehead", "conehead", "conehead",
+            "black_slime", "black_slime", "black_slime", "black_slime", "black_slime"
+          ],
+          "spawn_points": [
+            [3425, 475], [3535, 565], [2990, 465], [2880, 555],
+            [3090, 470], [3220, 555], [3350, 455], [3480, 575], [3610, 500]
+          ],
+          "entries": ["rush_left", "rush_left", "rush_right", "rush_right", "slime_drop", "slime_drop", "slime_drop", "slime_drop", "slime_drop"],
+          "entry_durations": [0.65, 0.8, 0.65, 0.8, 0.55, 0.85, 1.15, 1.45, 1.75]
+        }
+      ],
+      "breakables": [
+        {
+          "id": "food_mushroom_1", "kind": "mushroom", "x": 2580, "y": 535, "health": 2,
+          "output": {"type": "random_food", "id": "mushroom_food_1", "x": 2580, "y": 520},
+          "break_notice": "THE MUSHROOM DROPPED FOOD"
+        },
+        {
+          "id": "food_mushroom_2", "kind": "mushroom", "x": 2805, "y": 565, "health": 2,
+          "output": {"type": "random_food", "id": "mushroom_food_2", "x": 2805, "y": 550},
+          "break_notice": "THE MUSHROOM DROPPED FOOD"
+        },
+        {
+          "id": "food_mushroom_3", "kind": "mushroom", "x": 3025, "y": 500, "health": 2,
+          "output": {"type": "random_food", "id": "mushroom_food_3", "x": 3025, "y": 490},
+          "break_notice": "THE MUSHROOM DROPPED FOOD"
+        }
+      ],
+      "loot": [
+        {"id": "cart_bag_1", "kind": "gold_bag", "x": 1780, "y": 565, "gold": 5},
+        {"id": "cart_bag_2", "kind": "gold_bag", "x": 1870, "y": 535, "gold": 5},
+        {"id": "cart_bag_3", "kind": "gold_bag", "x": 1960, "y": 585, "gold": 5},
+        {"id": "cart_bag_4", "kind": "gold_bag", "x": 2050, "y": 545, "gold": 5},
+        {"id": "cart_bag_5", "kind": "gold_bag", "x": 2140, "y": 590, "gold": 5},
+        {"id": "cart_bag_6", "kind": "gold_bag", "x": 2230, "y": 540, "gold": 5},
+        {"id": "cart_bag_7", "kind": "gold_bag", "x": 2265, "y": 610, "gold": 5}
+      ],
+      "doors": [
+        {
+          "x": 4960,
+          "y": 535,
+          "radius": 145,
+          "label": "CYCLOP'S GATE",
+          "style": "golden_eye_arch",
+          "target_level": "cyclops_gate",
+          "requires_clear": true
+        }
+      ]
+    }
+  }
+}

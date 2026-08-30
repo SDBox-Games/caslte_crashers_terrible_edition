@@ -1,0 +1,119 @@
+{
+  "id": "cyclops_fortress",
+  "name": "Cyclop's Fortress",
+  "music": "cyclops_cave",
+  "start_scene": "fortress_hall",
+  "unlocks": ["lava_world"],
+  "scenes": {
+    "fortress_hall": {
+      "name": "Cyclop's Fortress",
+      "background": "cyclops_fortress",
+      "world_width": 12650,
+      "bounds": [80, 12570, 420, 625],
+      "spawn": [230, 545],
+      "camera_follow": true,
+      "props": {
+        "entrance_cave": 120,
+        "seated_chair": 690,
+        "first_balcony": 1780,
+        "first_portrait": 2890,
+        "doorway": 3550,
+        "closed_passages": [470, 4520, 6620],
+        "tall_lights": [350, 910, 1650, 3380, 4310, 6130, 8420],
+        "lava_cracks": [2680, 3050, 4880, 7860, 9020],
+        "lava_statue": 4950,
+        "furniture": [5850, 6200, 6480, 6760],
+        "wall_crack": 6360,
+        "pillars": [7040, 9000],
+        "plane_portrait": 7940,
+        "second_balcony": 8520,
+        "fortress_end": 9650,
+        "boss_chair": 10880,
+        "rescue_princess": 11370,
+        "coffin": 10530,
+        "lava_pool": 11930
+      },
+      "story_events": [
+        {
+          "id": "cyclops_reveal",
+          "trigger_x": 9720,
+          "camera_x": 10150,
+          "duration": 6.2,
+          "after_wave_clear": "elite_guard",
+          "effects": [
+            {"at": 2.1, "kind": "shake", "duration": 0.35, "strength": 0.28},
+            {"at": 4.2, "kind": "shake", "duration": 0.55, "strength": 0.48}
+          ]
+        }
+      ],
+      "waves": [
+        {
+          "id": "newspaper_reader",
+          "trigger_x": 180,
+          "count": 1,
+          "enemy": "conehead",
+          "spawn_points": [[690, 525]],
+          "entry": "newspaper",
+          "entry_duration": 1.35
+        },
+        {
+          "id": "balcony_patrol",
+          "trigger_x": 1700,
+          "count": 4,
+          "enemy": "conehead",
+          "spawn_points": [[2240, 485], [2340, 545], [2440, 595], [2530, 515]],
+          "entry": "rush_left",
+          "entry_duration": 1.1
+        },
+        {
+          "id": "doorway_ambush",
+          "trigger_x": 3460,
+          "count": 4,
+          "enemy": "conehead",
+          "spawn_points": [[3180, 490], [3290, 570], [3900, 500], [4010, 580]],
+          "entries": ["rush_right", "rush_right", "rush_left", "rush_left"],
+          "entry_duration": 1.0
+        },
+        {
+          "id": "statue_ambush",
+          "trigger_x": 4850,
+          "count": 4,
+          "enemy": "conehead",
+          "spawn_points": [[5480, 480], [5580, 545], [5680, 595], [5770, 515]],
+          "entry": "rush_left",
+          "entry_duration": 1.15
+        },
+        {
+          "id": "pillar_ambush",
+          "trigger_x": 6960,
+          "count": 4,
+          "enemy": "conehead",
+          "spawn_points": [[6480, 485], [6580, 545], [6680, 600], [6780, 515]],
+          "entry": "rush_right",
+          "entry_duration": 1.1
+        },
+        {
+          "id": "elite_guard",
+          "trigger_x": 8920,
+          "count": 2,
+          "types": ["elite_conehead", "fire_demon"],
+          "spawn_points": [[9400, 500], [9525, 570]],
+          "entry": "rush_left",
+          "entry_duration": 1.25,
+          "drop_weapons": ["lightsaber", null]
+        }
+      ],
+      "boss": {
+        "kind": "cyclops",
+        "name": "CYCLOPS",
+        "trigger_x": 10000,
+        "x": 10880,
+        "y": 535,
+        "health": 360,
+        "requires_clear": true,
+        "requires_story": "cyclops_reveal"
+      },
+      "doors": []
+    }
+  }
+}

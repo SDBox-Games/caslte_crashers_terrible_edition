@@ -1,0 +1,27 @@
+{
+  "id": "thieves_store",
+  "name": "Thieves' Store",
+  "music": "thieves_store",
+  "start_scene": "forest_shop",
+  "unlocks": [],
+  "scenes": {
+    "forest_shop": {
+      "name": "Thieves' Store",
+      "background": "thieves_store",
+      "world_width": 1800,
+      "bounds": [80, 1720, 430, 625],
+      "spawn": [170, 545],
+      "camera_follow": true,
+      "waves": [],
+      "shop": [
+        {"id": "thief_stick", "name": "Thief Stick", "x": 430, "y": 530, "cost": 12},
+        {"id": "health_potion", "name": "Health Potion", "x": 700, "y": 530, "cost": 5, "maximum": 5},
+        {"id": "bomb", "name": "Bomb", "x": 1320, "y": 530, "cost": 8, "maximum": 9}
+      ],
+      "props": {"shopkeeper": 1010},
+      "doors": [
+        {"x": 1680, "y": 515, "radius": 95, "label": "WORLD MAP", "complete_level": true}
+      ]
+    }
+  }
+}

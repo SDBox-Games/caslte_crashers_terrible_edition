@@ -1,0 +1,20 @@
+{
+  "id": "necromancer",
+  "display_name": "Necromancer",
+  "title": "Winged Dark Mage",
+  "playable": true,
+  "roster_index": 44,
+  "armor": [37, 34, 52],
+  "accent": [122, 72, 157],
+  "glow": [213, 95, 255],
+  "emblem": "SKULL",
+  "texture_dir": "necromancer",
+  "starting_weapon": "necromancer_sword",
+  "base_health": 180,
+  "max_mana": 180,
+  "has_magic": true,
+  "magic": {
+    "element": "necromancy",
+    "texture_dir": "necromancer"
+  }
+}

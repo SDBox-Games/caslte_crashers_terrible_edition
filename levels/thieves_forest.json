@@ -1,0 +1,170 @@
+{
+  "id": "thieves_forest",
+  "name": "Thieves' Forest",
+  "music": "thieves_forest",
+  "start_scene": "deep_forest",
+  "unlocks": ["thieves_store", "abandoned_mill"],
+  "scenes": {
+    "deep_forest": {
+      "name": "Thieves' Forest",
+      "background": "thieves_forest",
+      "world_width": 13200,
+      "bounds": [80, 13120, 420, 625],
+      "spawn": [180, 545],
+      "camera_follow": true,
+      "elevation": [
+        {"from": 1320, "to": 2050, "start": 0, "end": -145},
+        {"from": 2420, "to": 2580, "start": -145, "end": 0},
+        {"from": 4700, "to": 4890, "start": 0, "end": -125},
+        {"from": 5300, "to": 5510, "start": -125, "end": 0},
+        {"from": 6510, "to": 6920, "start": 0, "end": 105},
+        {"from": 9020, "to": 9240, "start": 105, "end": 0},
+        {"from": 9380, "to": 9720, "start": 0, "end": 85}
+      ],
+      "ledges": [
+        {"x": 2500, "climb_from": "left", "jump_height": 40},
+        {"x": 4825, "climb_from": "right", "jump_height": 42},
+        {"x": 9140, "climb_from": "left", "jump_height": 38}
+      ],
+      "water": [
+        {"from": 5580, "to": 6280, "speed_scale": 0.5}
+      ],
+      "props": {
+        "opening_bush": 690,
+        "flower_bush": 1120,
+        "owl_tree": 2020,
+        "first_ledge": 2500,
+        "hay_pile": 2920,
+        "fish_basket": 4320,
+        "cook_stand": 4470,
+        "hay_tent": 4630,
+        "deer": 4740,
+        "second_ledge": 4825,
+        "stone_path": [5300, 5570],
+        "river": [5580, 6280],
+        "river_pillars": [5420, 6380],
+        "ruin_pillars": [6650, 7040, 7350, 7900, 8620, 8900],
+        "ruin_doorways": [7000, 7420],
+        "ruin_walls": [[7150, 7700], [7800, 8500], [8540, 8980]],
+        "secret_gap": 7580,
+        "bear_bush": 8880,
+        "broken_pillar": 9160,
+        "bridge_river": [9900, 10280],
+        "bridge": [9960, 10220],
+        "camp": [10320, 11240],
+        "washer": 10480,
+        "campfire": 11100,
+        "mill": 12420
+      },
+      "story_events": [
+        {"id": "thieves_forest_intro", "trigger_x": 0, "camera_x": 0, "duration": 4.2},
+        {
+          "id": "scared_owl", "trigger_x": 1560, "camera_x": 1320, "duration": 6.2,
+          "allow_movement": true, "movement_bounds": [1320, 2520, 420, 625],
+          "effects": [
+            {"at": 1.25, "kind": "shake", "strength": 0.56, "duration": 0.38, "x": 2020, "radius": 1250},
+            {"at": 2.55, "kind": "shake", "strength": 0.62, "duration": 0.42, "x": 2020, "radius": 1250},
+            {"at": 4.65, "kind": "shake", "strength": 0.22, "duration": 0.25, "x": 2020, "radius": 720}
+          ]
+        },
+        {
+          "id": "poop_deer", "trigger_x": 4200, "camera_x": 4050, "duration": 5.4,
+          "effects": [
+            {"at": 1.0, "kind": "shake", "strength": 0.5, "duration": 0.34, "x": 4740, "radius": 1200},
+            {"at": 2.05, "kind": "shake", "strength": 0.58, "duration": 0.4, "x": 4740, "radius": 1200},
+            {"at": 3.1, "kind": "shake", "strength": 0.2, "duration": 0.2, "x": 4740, "radius": 750}
+          ]
+        },
+        {
+          "id": "scared_bear", "trigger_x": 8500, "camera_x": 8280, "duration": 5.2,
+          "effects": [
+            {"at": 1.2, "kind": "shake", "strength": 0.55, "duration": 0.38, "x": 8880, "radius": 1300},
+            {"at": 2.45, "kind": "shake", "strength": 0.64, "duration": 0.42, "x": 8880, "radius": 1300},
+            {"at": 3.5, "kind": "shake", "strength": 0.28, "duration": 0.25, "x": 8880, "radius": 850}
+          ]
+        },
+        {
+          "id": "camp_escape", "trigger_x": 10920, "camera_x": 10580, "duration": 3.8
+        },
+        {
+          "id": "mill_escape", "trigger_x": 11460, "camera_x": 10980, "duration": 3.15
+        }
+      ],
+      "waves": [
+        {
+          "id": "hay_ambush", "trigger_x": 2740, "enemy": "thief", "count": 5,
+          "spawn_points": [[2680, 480], [2780, 575], [3370, 495], [3470, 580], [3200, 500]],
+          "entries": ["crate", "crate", "crate", "crate", "swing"],
+          "entry_durations": [0.55, 0.7, 0.55, 0.7, 2.8]
+        },
+        {
+          "id": "post_chest_ambush", "trigger_x": 3850, "enemy": "thief", "count": 8,
+          "spawn_points": [[3900, 470], [4020, 575], [4160, 515], [4300, 590], [4430, 485], [4550, 565], [4240, 500], [4510, 520]],
+          "entries": ["crate", "crate", "crate", "crate", "crate", "crate", "swing", "swing"],
+          "entry_durations": [0.5, 0.65, 0.55, 0.7, 0.5, 0.65, 2.4, 3.0]
+        },
+        {
+          "id": "river_swingers", "trigger_x": 5520, "enemy": "thief", "count": 7,
+          "spawn_points": [[5700, 500], [5800, 555], [5900, 485], [6000, 575], [6100, 510], [6180, 585], [6250, 500]],
+          "entry": "swing", "entry_durations": [2.0, 2.35, 2.7, 3.05, 3.4, 3.75, 4.1]
+        },
+        {
+          "id": "first_trolls", "trigger_x": 6840, "enemy": "troll", "count": 3,
+          "spawn_points": [[7060, 470], [7200, 575], [7360, 510]],
+          "entries": ["ladder", "crate", "ladder"], "entry_durations": [1.0, 0.55, 1.25]
+        },
+        {
+          "id": "door_troll", "trigger_x": 7420, "enemy": "troll", "count": 1,
+          "spawn_points": [[7650, 530]], "entry": "crate", "entry_duration": 0.65
+        },
+      {"id": "bridge_thief", "trigger_x": 9850, "enemy": "tiny_thief", "count": 1, "spawn_points": [[10120, 525]]},
+        {"id": "camp_washers", "trigger_x": 10380, "enemy": "thief", "count": 3, "spawn_points": [[10480, 545], [10820, 490], [10950, 585]]},
+        {
+          "id": "mill_trolls", "trigger_x": 11500, "enemy": "troll", "count": 2,
+          "spawn_points": [[11900, 500], [12100, 575]], "entries": ["crate", "crate"], "entry_durations": [0.55, 1.25]
+        }
+      ],
+      "breakables": [
+        {
+          "id": "maul_chest", "kind": "chest", "x": 3220, "y": 535, "health": 4,
+          "output": {"type": "weapon", "id": "forest_maul", "name": "Forest Maul", "x": 3220, "y": 520},
+          "break_notice": "THE CHEST DROPPED A FOREST MAUL"
+        },
+        {
+          "id": "troll_pet_wall", "kind": "secret_wall", "x": 7580, "y": 505, "health": 2, "requires": "bomb",
+          "output": {"type": "pet", "id": "troll", "name": "Troll", "x": 7580, "y": 520},
+          "break_notice": "A HIDDEN TROLL PET WAS REVEALED"
+        },
+        {
+          "id": "stick_chest", "kind": "chest", "x": 7900, "y": 540, "health": 4,
+          "output": {"type": "weapon", "id": "thief_stick", "name": "Thief Stick", "x": 7900, "y": 520},
+          "break_notice": "THE CHEST DROPPED A THIEF STICK"
+        },
+        {
+          "id": "damaged_ruin_wall", "kind": "wall", "x": 8420, "y": 520, "health": 7, "blocking": true, "block_radius": 92,
+          "break_notice": "THE DAMAGED RUIN WALL COLLAPSED"
+        },
+        {
+          "id": "meat_chest", "kind": "chest", "x": 11350, "y": 535, "health": 4,
+          "output": {"type": "food", "id": "boss_meat", "kind": "meat", "x": 11350, "y": 520, "heal_amount": 130},
+          "break_notice": "THE CHEST DROPPED MEAT"
+        }
+      ],
+      "loot": [
+        {"id": "hay_money", "kind": "gold_bag", "x": 3010, "y": 535, "gold": 5},
+        {"id": "bridge_left_1", "kind": "gold_bag", "x": 9760, "y": 535, "gold": 5},
+        {"id": "bridge_left_2", "kind": "gold_bag", "x": 9860, "y": 555, "gold": 5},
+        {"id": "bridge_mid_1", "kind": "gold_bag", "x": 10070, "y": 515, "gold": 5},
+        {"id": "bridge_mid_2", "kind": "gold_bag", "x": 10170, "y": 545, "gold": 5},
+        {"id": "before_boss", "kind": "gold_bag", "x": 11430, "y": 540, "gold": 5}
+      ],
+      "pets": [
+        {"id": "seahorse", "name": "Seahorse", "x": 5940, "y": 535}
+      ],
+      "boss": {
+        "kind": "troll_boss", "name": "GIANT TROLL", "trigger_x": 11800,
+        "x": 12420, "y": 535, "health": 180, "requires_clear": true
+      }
+    }
+  }
+}

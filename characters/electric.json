@@ -1,0 +1,26 @@
+{
+  "id": "electric",
+  "display_name": "Electric",
+  "title": "Lightning Knight",
+  "playable": true,
+  "roster_index": 0,
+  "armor": [190, 48, 45],
+  "accent": [255, 236, 104],
+  "glow": [255, 245, 156],
+  "emblem": "BOLT",
+  "texture_dir": "electric",
+  "starting_weapon": "rusty_sword",
+  "base_health": 100,
+  "max_mana": 100,
+  "has_magic": true,
+  "magic": {
+    "element": "electric",
+    "texture_dir": "electric",
+    "abilities": {
+      "x": {"kind": "lightning_line", "texture": "projectile", "unlock_magic": 0, "cost": 10, "range": 720, "radius": 86, "duration": 2.1, "status": "stun", "status_duration": 1.0},
+      "y": {"kind": "sky_strike", "texture": "splash", "unlock_magic": 2, "cost": 20, "range": 720, "radius": 115, "duration": 0.9, "status": "stun", "status_duration": 1.0},
+      "a": {"kind": "jump", "texture": "jump", "unlock_magic": 4, "cost": 16, "status": "stun", "status_duration": 1.0},
+      "b": {"kind": "infusion", "texture": "infusion", "unlock_magic": 6, "cost": 24, "status": "stun", "status_duration": 1.0}
+    }
+  }
+}

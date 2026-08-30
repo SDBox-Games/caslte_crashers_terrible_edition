@@ -1,0 +1,101 @@
+{
+  "id": "forest_entrance",
+  "name": "Forest Entrance",
+  "music": "map",
+  "start_scene": "forest_road",
+  "unlocks": ["thieves_forest"],
+  "scenes": {
+    "forest_road": {
+      "name": "Forest Entrance",
+      "background": "forest_entrance",
+      "world_width": 7400,
+      "bounds": [80, 7310, 430, 625],
+      "spawn": [235, 545],
+      "camera_follow": true,
+      "elevation": [
+        {"from": 3320, "to": 3820, "start": 0, "end": 145}
+      ],
+      "props": {
+        "log_wall": [70, 520],
+        "black_flag": 360,
+        "tree_stumps": [470, 630, 1010, 1160, 3180, 4080, 5480, 5720],
+        "fruit_trees": [
+          {"x": 820, "fruit": "pear"},
+          {"x": 2940, "fruit": "banana"},
+          {"x": 4320, "fruit": "banana"},
+          {"x": 4700, "fruit": "apple"},
+          {"x": 5080, "fruit": "cherry"}
+        ],
+        "dead_barbarian": 1190,
+        "dead_gray_knight": 1360,
+        "decorative_money_bags": [1445],
+        "slope": [3320, 3820],
+        "bush_entrance": 7140
+      },
+      "food": [
+        {"id": "pear_start", "kind": "pear", "x": 850, "y": 520, "heal_amount": 95},
+        {"id": "banana_after_escape", "kind": "banana", "x": 2970, "y": 520, "heal_amount": 95},
+        {"id": "banana_tree", "kind": "banana", "x": 4320, "y": 520, "heal_amount": 95, "visible_after_x": 4920},
+        {"id": "apple_tree", "kind": "apple", "x": 4700, "y": 520, "heal_amount": 60, "visible_after_x": 4920},
+        {"id": "cherry_tree", "kind": "cherry", "x": 5080, "y": 520, "heal_amount": 25, "visible_after_x": 4920}
+      ],
+      "loot": [
+        {"id": "slope_money_bag", "kind": "gold_bag", "x": 4000, "y": 535, "gold": 5}
+      ],
+      "pets": [
+        {"id": "owlet", "name": "Hidden Owl", "x": 6990, "y": 505, "hidden": true}
+      ],
+      "story_events": [
+        {
+          "id": "forest_princess_escape",
+          "after_wave_clear": "opening_thieves",
+          "camera_x": 1160,
+          "duration": 10.5
+        }
+      ],
+      "waves": [
+        {
+          "id": "opening_thieves",
+          "trigger_x": 1040,
+          "enemy": "thief",
+          "count": 3,
+          "spawn_points": [[1580, 500], [1695, 575], [1840, 520]],
+          "mounts": {"0": "dinosaur"}
+        },
+        {
+          "id": "escape_attack",
+          "trigger_x": 0,
+          "after_story": "forest_princess_escape",
+          "count": 6,
+          "types": ["buff_thief", "barbarian", "barbarian", "barbarian", "barbarian", "barbarian"],
+          "spawn_points": [[2070, 510], [2200, 580], [2330, 485], [2460, 565], [2590, 510], [2730, 590]]
+        },
+        {
+          "id": "three_trees",
+          "trigger_x": 4140,
+          "enemy": "thief",
+          "count": 6,
+          "spawn_points": [[4460, 485], [4580, 575], [4760, 520], [4910, 590], [5180, 490], [5350, 565]]
+        },
+        {
+          "id": "bush_ambush",
+          "trigger_x": 6070,
+          "enemy": "thief",
+          "count": 5,
+          "spawn_points": [[6360, 485], [6480, 575], [6610, 520], [6740, 590], [6880, 500]]
+        }
+      ],
+      "doors": [
+        {
+          "x": 7140,
+          "y": 520,
+          "radius": 118,
+          "label": "THIEVES' FOREST",
+          "style": "bush",
+          "target_level": "thieves_forest",
+          "requires_clear": true
+        }
+      ]
+    }
+  }
+}

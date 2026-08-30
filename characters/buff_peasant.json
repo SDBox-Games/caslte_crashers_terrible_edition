@@ -1,0 +1,7 @@
+{
+  "id": "buff_peasant", "display_name": "Buff Peasant", "title": "Village Bruiser",
+  "playable": false, "roster_index": 48,
+  "armor": [143, 91, 52], "accent": [207, 177, 111], "glow": [125, 177, 73],
+  "emblem": "HAY", "texture_dir": "peasant", "starting_weapon": "rusty_sword",
+  "base_health": 150, "max_mana": 0, "has_magic": false
+}

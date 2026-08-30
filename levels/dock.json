@@ -1,0 +1,35 @@
+{
+  "id": "dock",
+  "name": "Dock",
+  "music": "map",
+  "start_scene": "harbor",
+  "unlocks": ["pirate_ship"],
+  "scenes": {
+    "harbor": {
+      "name": "Dock",
+      "background": "dock",
+      "world_width": 4700,
+      "bounds": [90, 4610, 430, 625],
+      "spawn": [180, 545],
+      "camera_follow": true,
+      "waves": [],
+      "props": {
+        "ship": 4300,
+        "golden_wheel_bubble": 1550,
+        "spyglass_bubble": 2520,
+        "requirement_gate": 3650
+      },
+      "doors": [
+        {
+          "x": 4400,
+          "y": 525,
+          "radius": 125,
+          "label": "BOARD SHIP",
+          "target_level": "pirate_ship",
+          "requires_levels": ["lava_world", "industrial_castle"],
+          "missing_labels": {"lava_world": "GOLDEN WHEEL", "industrial_castle": "SPYGLASS"}
+        }
+      ]
+    }
+  }
+}

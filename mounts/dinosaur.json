@@ -1,0 +1,27 @@
+{
+  "id": "dinosaur",
+  "name": "Dinosaur",
+  "style": "dinosaur",
+  "speed": 330,
+  "seat_height": 112,
+  "mount_radius": 58,
+  "body_color": [86, 154, 70],
+  "belly_color": [181, 193, 92],
+  "saddle_color": [112, 63, 37],
+  "texture_dir": "dinosaur",
+  "parts": {
+    "tail": {"offset": [-104, -65], "height": 94, "angle": 0},
+    "leg_back": {"offset": [-48, -12], "height": 92, "angle": 0},
+    "leg_front": {"offset": [49, -12], "height": 92, "angle": 0},
+    "body": {"offset": [0, -67], "height": 132, "angle": 0},
+    "neck": {"offset": [72, -101], "height": 105, "angle": 0},
+    "head": {"offset": [119, -132], "height": 78, "angle": 0},
+    "jaw": {"offset": [126, -99], "height": 42, "angle": 0},
+    "saddle": {"offset": [0, -115], "height": 43, "angle": 0}
+  },
+  "abilities": {
+    "x": {"kind": "chomp", "damage": 5, "reach": 145, "cooldown": 0.48},
+    "y": {"kind": "rider_sword"},
+    "a": {"kind": "dismount"}
+  }
+}

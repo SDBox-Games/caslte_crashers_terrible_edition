@@ -1,0 +1,31 @@
+{
+  "id": "wizard_castle_final",
+  "name": "Final Battle",
+  "music": "map",
+  "start_scene": "lift_and_arena",
+  "unlocks": [],
+  "scenes": {
+    "lift_and_arena": {
+      "name": "Final Battle · Crystal Lift",
+      "background": "wizard_final_vertical",
+      "world_width": 1280,
+      "bounds": [80, 1200, 415, 625],
+      "spawn": [230, 545],
+      "camera_follow": false,
+      "props": {"lift_pad": 930, "throne_crystal": 640},
+      "waves": [],
+      "doors": []
+    },
+    "castle_barracks": {
+      "name": "Castle Barracks Celebration",
+      "background": "castle_barracks",
+      "world_width": 1280,
+      "bounds": [80, 1200, 415, 625],
+      "spawn": [280, 545],
+      "camera_follow": false,
+      "props": {},
+      "waves": [],
+      "doors": []
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "deserts",
+  "name": "Deserts",
+  "music": "map",
+  "start_scene": "desert_crossing",
+  "unlocks": ["alien_ship"],
+  "scenes": {
+    "desert_crossing": {
+      "name": "Deserts",
+      "background": "deserts",
+      "world_width": 18100,
+      "bounds": [100, 17850, 435, 620],
+      "spawn": [235, 465],
+      "camera_follow": true,
+      "waves": [
+        {"id": "first_scarab", "trigger_x": 5100, "after_story": "scarab_reveal", "count": 1, "types": ["scarab"], "spawn_points": [[5520, 535]]},
+        {"id": "scarab_pair", "trigger_x": 6400, "count": 2, "types": ["scarab", "scarab"], "spawn_points": [[6780, 475], [6940, 565]]},
+        {"id": "chain_patrol_one", "trigger_x": 7900, "count": 3, "types": ["chain_guard", "chain_guard", "scarab"], "spawn_points": [[8280, 470], [8380, 575], [8500, 525]]},
+        {"id": "chain_patrol_two", "trigger_x": 9150, "count": 3, "types": ["chain_guard", "chain_guard", "scarab"], "spawn_points": [[9470, 455], [9600, 570], [9740, 520]]},
+        {"id": "desert_last_patrol", "trigger_x": 10400, "count": 4, "types": ["scarab", "scarab", "chain_guard", "chain_guard"], "spawn_points": [[10780, 455], [10910, 570], [11040, 480], [11160, 565]]}
+      ],
+      "story_events": [
+        {"id": "scarab_reveal", "trigger_x": 4950, "camera_x": 5000, "duration": 5.4, "effects": [{"at": 2.55, "kind": "shake", "duration": 0.35, "strength": 0.28}]}
+      ],
+      "props": {"ship_x": 175, "sandcastle_x": 1020, "antlion_holes": [1900, 3750, 4230, 7240], "brick_piles": [9020, 9560, 10080, 10540, 11020]},
+      "doors": []
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "ice",
+  "display_name": "Ice",
+  "title": "Ice Knight",
+  "playable": true,
+  "roster_index": 1,
+  "armor": [39, 100, 174],
+  "accent": [72, 196, 224],
+  "glow": [174, 241, 255],
+  "emblem": "ICE",
+  "texture_dir": "ice",
+  "starting_weapon": "rusty_sword",
+  "base_health": 105,
+  "max_mana": 100,
+  "has_magic": true,
+  "magic": {
+    "element": "ice",
+    "texture_dir": "ice",
+    "abilities": {
+      "x": {"kind": "projectile", "texture": "projectile", "unlock_magic": 0, "cost": 10, "status": "freeze", "status_duration": 5.0},
+      "y": {"kind": "splash", "texture": "splash", "unlock_magic": 2, "cost": 20, "status": "freeze", "status_duration": 5.0},
+      "a": {"kind": "jump", "texture": "jump", "unlock_magic": 4, "cost": 16, "status": "freeze", "status_duration": 5.0},
+      "b": {"kind": "infusion", "texture": "infusion", "unlock_magic": 6, "cost": 24, "status": "freeze", "status_duration": 5.0}
+    }
+  }
+}

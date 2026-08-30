@@ -1,0 +1,52 @@
+{
+  "id": "home_castle",
+  "name": "Home Castle",
+  "music": "home_castle",
+  "start_scene": "castle_road",
+  "unlocks": ["castle_keep", "blacksmith", "arena"],
+  "intro": {"duration": 10.2, "skippable_after": 1.0},
+  "scenes": {
+    "castle_road": {
+      "name": "Home Castle",
+      "background": "home_castle_road",
+      "world_width": 5100,
+      "bounds": [80, 5020, 430, 625],
+      "spawn": [355, 548],
+      "camera_follow": true,
+      "terrain": [
+        {"kind": "stone", "from": 0, "to": 1080},
+        {"kind": "stairs_down", "from": 930, "to": 1190},
+        {"kind": "dirt", "from": 1120, "to": 3520},
+        {"kind": "stairs_up", "from": 3350, "to": 3700},
+        {"kind": "stone_wall_top", "from": 3650, "to": 5100}
+      ],
+      "props": {"hay_pitchfork": 1320, "burning_houses": [1630, 2210, 2790], "crate": 3810, "ladder": 4380, "pathway": 4080},
+      "doors": [
+        {"x": 330, "y": 505, "radius": 92, "label": "TRAINING ROOM", "target": "training_room", "target_spawn": [620, 548]},
+        {"x": 4870, "y": 505, "radius": 100, "label": "CASTLE KEEP", "target_level": "castle_keep", "requires_clear": true}
+      ],
+      "weapons": [
+        {"id": "pitchfork", "name": "Pitchfork", "x": 1320, "y": 530, "color": [143, 94, 55]}
+      ],
+      "story_events": [
+        {"id": "princess_kidnapping", "trigger_x": 3370, "camera_x": 3750, "camera_y": -540, "entrance_x": 4870, "duration": 9.8}
+      ],
+      "waves": [
+        {"id": "village_1", "trigger_x": 1690, "enemy": "barbarian", "count": 4, "spawn_x": 2050},
+        {"id": "village_2", "trigger_x": 2550, "enemy": "barbarian", "count": 5, "spawn_x": 2920},
+        {"id": "crate_door_ladder", "trigger_x": 3740, "enemy": "barbarian", "scripted_ambush": true}
+      ]
+    },
+    "training_room": {
+      "name": "Training Room",
+      "background": "training_room",
+      "world_width": 900,
+      "bounds": [70, 830, 430, 625],
+      "spawn": [620, 548],
+      "camera_follow": false,
+      "doors": [
+        {"x": 790, "y": 505, "radius": 95, "label": "HOME CASTLE", "target": "castle_road", "target_spawn": [420, 548]}
+      ]
+    }
+  }
+}

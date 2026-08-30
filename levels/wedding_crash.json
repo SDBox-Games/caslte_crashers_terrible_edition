@@ -1,0 +1,111 @@
+{
+  "id": "wedding_crash",
+  "name": "Wedding Crash",
+  "music": "map",
+  "start_scene": "wedding_hall",
+  "unlocks": ["church_store", "parade"],
+  "scenes": {
+    "wedding_hall": {
+      "name": "Wedding Crash",
+      "background": "wedding_hall",
+      "world_width": 11200,
+      "bounds": [80, 11080, 420, 625],
+      "spawn": [260, 545],
+      "camera_follow": true,
+      "props": {
+        "cake": 690,
+        "tables": [1450, 1830, 2250, 2700, 3260, 3720],
+        "vent": 4800,
+        "carpets": [4520, 5080],
+        "windows": [5480, 5820, 6160],
+        "chairs": [7000, 7170, 7340, 7510, 7680, 7850],
+        "bathroom": 8460,
+        "piano": 9850,
+        "exit": 10840,
+        "princess": 10130
+      },
+      "story_events": [
+        {
+          "id": "wedding_intro",
+          "trigger_x": 0,
+          "camera_x": 0,
+          "duration": 7.2,
+          "effects": [
+            {"at": 0.7, "kind": "shake", "duration": 0.32, "strength": 0.35},
+            {"at": 1.05, "kind": "shake", "duration": 0.32, "strength": 0.35},
+            {"at": 1.45, "kind": "shake", "duration": 0.45, "strength": 0.5}
+          ]
+        },
+        {
+          "id": "groom_reveal",
+          "trigger_x": 8680,
+          "camera_x": 9140,
+          "duration": 5.8,
+          "after_wave_clear": "second_windows"
+        }
+      ],
+      "waves": [
+        {
+          "id": "wedding_guards",
+          "trigger_x": 350,
+          "after_story": "wedding_intro",
+          "count": 2,
+          "enemy": "conehead",
+          "spawn_points": [[900, 500], [1080, 565]]
+        },
+        {
+          "id": "cake_reinforcements",
+          "trigger_x": 1350,
+          "count": 4,
+          "enemy": "conehead",
+          "spawn_points": [[1540, 485], [1680, 560], [1850, 510], [2010, 580]],
+          "entry": "hall_drop"
+        },
+        {
+          "id": "hall_guards",
+          "trigger_x": 3100,
+          "count": 5,
+          "enemy": "conehead",
+          "spawn_points": [[3290, 480], [3420, 550], [3560, 510], [3700, 580], [3840, 525]]
+        },
+        {
+          "id": "first_windows",
+          "trigger_x": 5150,
+          "count": 2,
+          "enemy": "conehead",
+          "spawn_points": [[5480, 505], [5740, 565]],
+          "entries": ["window", "rush_left"],
+          "entry_durations": [0.8, 0.65]
+        },
+        {
+          "id": "second_windows",
+          "trigger_x": 5800,
+          "count": 3,
+          "enemy": "conehead",
+          "spawn_points": [[5820, 490], [6160, 555], [6370, 520]],
+          "entries": ["window", "window", "rush_left"],
+          "entry_durations": [0.7, 1.0, 0.8]
+        }
+      ],
+      "breakables": [
+        {"id": "table_1", "kind": "banquet_table", "x": 1450, "y": 535, "health": 3, "output": {"type": "food", "id": "table_pear", "kind": "pear", "heal_amount": 35}},
+        {"id": "table_2", "kind": "banquet_table", "x": 1830, "y": 535, "health": 3, "output": {"type": "food", "id": "table_cherry", "kind": "cherry", "heal_amount": 22}},
+        {"id": "table_3", "kind": "banquet_table", "x": 2250, "y": 535, "health": 3, "output": {"type": "food", "id": "table_banana", "kind": "banana", "heal_amount": 35}},
+        {"id": "table_4", "kind": "banquet_table", "x": 2700, "y": 535, "health": 3, "output": {"type": "food", "id": "table_meat", "kind": "meat", "heal_amount": 70}},
+        {"id": "table_5", "kind": "banquet_table", "x": 3260, "y": 535, "health": 3, "output": {"type": "food", "id": "table_apple", "kind": "apple", "heal_amount": 28}},
+        {"id": "table_6", "kind": "banquet_table", "x": 3720, "y": 535, "health": 3, "output": {"type": "food", "id": "table_meat_2", "kind": "meat", "heal_amount": 70}}
+      ],
+      "boss": {
+        "kind": "wedding_guard",
+        "name": "GROOM GUARD",
+        "trigger_x": 8900,
+        "x": 10100,
+        "y": 535,
+        "health": 220,
+        "requires_clear": true,
+        "requires_story": "groom_reveal"
+      },
+      "doors": []
+    }
+  }
+}

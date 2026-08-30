@@ -1,0 +1,16 @@
+{
+  "id": "snow_store", "name": "Snow Store", "music": "thieves_store", "start_scene": "snow_shop", "unlocks": [],
+  "scenes": {"snow_shop": {
+    "name": "Snow Store", "background": "snow_store", "world_width": 2850,
+    "bounds": [80, 2770, 430, 625], "spawn": [170, 545], "camera_follow": true, "waves": [],
+    "shop": [
+      {"id": "health_potion", "name": "Health Potion", "collection": "items", "x": 360, "y": 530, "cost": 5, "maximum": 5},
+      {"id": "black_red_sword", "name": "Black and Red Sword", "collection": "weapons", "x": 790, "y": 530, "cost": 28},
+      {"id": "sandwich", "name": "Sandwich", "collection": "items", "x": 1220, "y": 530, "cost": 6, "maximum": 9},
+      {"id": "butcher_knife", "name": "Butcher Knife", "collection": "weapons", "x": 1650, "y": 530, "cost": 24},
+      {"id": "fox", "name": "Fox", "collection": "pets", "x": 2080, "y": 530, "cost": 24}
+    ],
+    "props": {"shopkeeper": 2520},
+    "doors": [{"x": 2740, "y": 515, "radius": 95, "label": "WORLD MAP", "complete_level": true}]
+  }}
+}

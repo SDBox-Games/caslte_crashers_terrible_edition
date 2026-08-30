@@ -1,0 +1,6 @@
+{
+  "id": "fishman", "display_name": "Fishman", "title": "Flooded Spear", "playable": true, "roster_index": 50,
+  "armor": [54, 145, 111], "accent": [189, 222, 101], "glow": [99, 238, 171], "emblem": "FISH",
+  "texture_dir": "fishman", "starting_weapon": "fish_spear", "base_health": 105, "max_mana": 70,
+  "has_magic": true, "magic": {"element": "poison", "texture_dir": "green"}
+}

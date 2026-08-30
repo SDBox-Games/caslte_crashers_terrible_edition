@@ -1,0 +1,5 @@
+{
+  "id": "keep_sword",
+  "name": "Castle Keep Sword",
+  "modifiers": {"strength": 2, "defense": 2, "magic": 0, "agility": 0}
+}

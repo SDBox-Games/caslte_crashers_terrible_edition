@@ -1,0 +1,133 @@
+{
+  "id": "tall_grass_field",
+  "name": "Tall Grass Field",
+  "music": "tall_grass_field",
+  "start_scene": "field",
+  "unlocks": ["pipistrellos_cave"],
+  "scenes": {
+    "field": {
+      "name": "Tall Grass Field",
+      "background": "tall_grass_field",
+      "world_width": 15000,
+      "bounds": [80, 14920, 420, 625],
+      "spawn": [230, 545],
+      "camera_follow": true,
+      "elevation": [
+        {"from": 11600, "to": 12480, "start": 0, "end": -285}
+      ],
+      "props": {
+        "shore": [0, 900],
+        "ship": 70,
+        "king": 480,
+        "royal_camp": [260, 980],
+        "paw_flags": [1250, 2360, 5850, 7300, 12620],
+        "grass_houses": [2860, 3730, 4760, 5900, 7190, 7720],
+        "fish_pile": 3300,
+        "sleepers": [3480, 3600, 3740, 3880],
+        "rammy": 5960,
+        "boss_dancer": 6190,
+        "stone_area": [8950, 10350],
+        "arrow_zone": [9000, 10280],
+        "mountain": [11200, 14500],
+        "secret_boulder": [11420, 455],
+        "mountain_path": [11600, 12480],
+        "cat_statue": 12820,
+        "river": [12600, 14500],
+        "final_stage": 13280,
+        "cave_entrance": 14620
+      },
+      "story_events": [
+        {
+          "id": "sleeping_sheep_wake", "trigger_x": 3120, "camera_x": 2800, "duration": 5.2
+        },
+        {
+          "id": "rammy_dance", "trigger_x": 5700, "camera_x": 5560, "duration": 7.0,
+          "after_wave_clear": "second_sheep",
+          "effects": [
+            {"at": 3.0, "kind": "shake", "strength": 0.18, "duration": 0.25, "x": 6190, "radius": 1100}
+          ]
+        },
+        {
+          "id": "princess_handoff", "trigger_x": 13020, "camera_x": 12900, "camera_pan": 550, "camera_y": -255, "duration": 9.5,
+          "after_wave_clear": "post_arrow_sheep"
+        },
+        {
+          "id": "bats_exit", "trigger_x": 14100, "camera_x": 13710, "camera_y": -255, "duration": 2.5,
+          "after_wave_clear": "handoff_thieves"
+        }
+      ],
+      "waves": [
+        {
+          "id": "sleeping_sheep", "trigger_x": 0, "after_story": "sleeping_sheep_wake",
+          "enemy": "sheep_knight", "count": 4,
+          "spawn_points": [[3480, 480], [3600, 570], [3740, 505], [3880, 585]],
+          "entries": ["wake", "wake", "wake", "late_wake"],
+          "entry_durations": [0.75, 0.95, 1.15, 1.9]
+        },
+        {
+          "id": "second_sheep", "trigger_x": 4450, "enemy": "sheep_knight", "count": 4,
+          "spawn_points": [[4720, 475], [4860, 570], [5020, 510], [5170, 595]]
+        },
+        {
+          "id": "buff_runners", "trigger_x": 7440,
+          "count": 4,
+          "types": ["buff_sheep_knight", "buff_sheep_knight", "sheep_knight", "sheep_knight"],
+          "spawn_points": [[8120, 470], [8240, 565], [7960, 510], [8370, 595]],
+          "entries": ["rush_left", "rush_left", "rush_left", "rush_left"],
+          "entry_durations": [1.25, 1.45, 1.0, 1.7]
+        },
+        {
+          "id": "post_arrow_sheep", "trigger_x": 10600, "enemy": "sheep_knight", "count": 3,
+          "spawn_points": [[10220, 470], [10080, 555], [9920, 510]],
+          "entry": "rush_right", "entry_duration": 1.2
+        },
+        {
+          "id": "handoff_thieves", "trigger_x": 0, "after_story": "princess_handoff",
+          "enemy": "thief", "count": 2,
+          "spawn_points": [[13400, 485], [13600, 575]]
+        }
+      ],
+      "breakables": [
+        {"id": "left_arrow_machine", "kind": "arrow_machine", "x": 9440, "y": 500, "health": 9, "break_notice": "LEFT ARROW MACHINE DESTROYED"},
+        {"id": "right_arrow_machine", "kind": "arrow_machine", "x": 10040, "y": 565, "health": 9, "break_notice": "RIGHT ARROW MACHINE DESTROYED"}
+      ],
+      "boss": {
+        "kind": "rammy_sheep", "name": "SHEEP KNIGHT", "trigger_x": 5900,
+        "x": 6300, "y": 535, "health": 185, "requires_clear": true, "requires_story": "rammy_dance"
+      },
+      "doors": [
+        {
+          "x": 14620, "y": 520, "radius": 130, "label": "PIPISTRELLO'S CAVE",
+          "style": "cave", "target_level": "pipistrellos_cave", "requires_clear": true,
+          "requires_story": "bats_exit"
+        }
+      ]
+    },
+    "boulder_cave": {
+      "name": "Hidden Mountain Cave",
+      "background": "tall_grass_cave",
+      "world_width": 1800,
+      "bounds": [80, 1720, 420, 625],
+      "spawn": [230, 545],
+      "camera_follow": true,
+      "props": {"treasure_ledge": [700, 1420]},
+      "breakables": [
+        {
+          "id": "fish_weapon_chest", "kind": "chest", "x": 880, "y": 535, "health": 4,
+          "output": {"type": "weapon", "id": "fish_weapon", "name": "Fish Weapon", "x": 880, "y": 520},
+          "break_notice": "THE CHEST DROPPED A FISH WEAPON"
+        },
+        {
+          "id": "gold_chest", "kind": "chest", "x": 1320, "y": 535, "health": 4,
+          "break_notice": "THE CHEST DROPPED A MONEY BAG"
+        }
+      ],
+      "loot": [
+        {"id": "gold_chest_bag", "kind": "gold_bag", "x": 1320, "y": 520, "gold": 5, "visible_after_breakable": "gold_chest"}
+      ],
+      "doors": [
+        {"x": 120, "y": 520, "radius": 110, "label": "TALL GRASS FIELD", "target": "field", "target_spawn": [11160, 500]}
+      ]
+    }
+  }
+}

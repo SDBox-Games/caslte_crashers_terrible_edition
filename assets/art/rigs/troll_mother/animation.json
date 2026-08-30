@@ -1,0 +1,30 @@
+{
+  "id": "troll_mother",
+  "canvas": [1024, 1024],
+  "animations": {
+    "crawl": {
+      "duration": 0.9,
+      "loop": true,
+      "layers": [
+        {"part": "body", "keyframes": [{"time": 0.0, "y": 0}, {"time": 0.225, "y": 13}, {"time": 0.45, "y": 0}, {"time": 0.675, "y": -13}, {"time": 0.9, "y": 0}]},
+        {"part": "hand_1", "offset": [-25, -116], "keyframes": [{"time": 0.0, "rotation": 18}, {"time": 0.45, "rotation": 34}, {"time": 0.9, "rotation": 18}]},
+        {"part": "hand_2", "offset": [-25, -24], "keyframes": [{"time": 0.0, "rotation": -5}, {"time": 0.45, "rotation": -24}, {"time": 0.9, "rotation": -5}]},
+        {"part": "head", "offset": [42, -115], "keyframes": [{"time": 0.0, "rotation": -2}, {"time": 0.45, "rotation": 3}, {"time": 0.9, "rotation": -2}]}
+      ]
+    },
+    "reach": {
+      "duration": 1.0,
+      "loop": false,
+      "layers": [
+        {"part": "body"},
+        {"part": "long_hand", "offset": [-25, -116], "keyframes": [{"time": 0.0, "scale_x": 0.44, "rotation": -22}, {"time": 1.0, "scale_x": 1.0, "rotation": -8}]},
+        {"part": "long_hand", "offset": [-25, -24], "keyframes": [{"time": 0.0, "scale_x": 0.44, "rotation": 20}, {"time": 1.0, "scale_x": 1.0, "rotation": 8}]},
+        {"part": "head", "offset": [42, -115]}
+      ]
+    },
+    "no_arms": {"duration": 1.0, "loop": false, "layers": [{"part": "body"}, {"part": "head", "offset": [42, -115]}]},
+    "defeated": {"duration": 1.0, "loop": false, "layers": [{"part": "body"}, {"part": "hand_1", "offset": [-25, -116], "rotation": 42}, {"part": "hand_2", "offset": [-25, -24], "rotation": -31}, {"part": "head_defeated", "offset": [42, -115], "rotation": 8}]},
+    "head": {"duration": 1.0, "loop": false, "layers": [{"part": "head", "offset": [0, -115]}]},
+    "head_defeated": {"duration": 1.0, "loop": false, "layers": [{"part": "head_defeated", "offset": [0, -115]}]}
+  }
+}

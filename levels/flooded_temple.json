@@ -1,0 +1,24 @@
+{
+  "id": "flooded_temple", "name": "Flooded Temple", "music": "map", "start_scene": "temple_approach", "unlocks": ["medusas_lair"],
+  "scenes": {
+    "temple_approach": {
+      "name": "Flooded Temple · Horn Gate", "background": "flooded_temple_approach", "world_width": 4650,
+      "bounds": [80, 4570, 420, 625], "spawn": [180, 545], "camera_follow": true,
+      "props": {"stairs": [1650, 3050], "horn_gate_x": 3820, "snakey_statue": 910},
+      "breakables": [{"id": "approach_snakey_statue", "kind": "snakey_statue", "x": 910, "y": 555, "health": 4, "break_notice": "THE STATUE HID A MONEY BAG"}],
+      "loot": [{"id": "approach_statue_gold", "kind": "gold_bag", "x": 910, "y": 555, "gold": 5, "visible_after_breakable": "approach_snakey_statue"}],
+      "waves": [],
+      "doors": [{"x": 4100, "y": 515, "radius": 150, "label": "FLOODED HALL", "style": "horn_gate", "target": "flooded_hall", "target_spawn": [180, 545], "requires_flag": "horn_gate_open"}]
+    },
+    "flooded_hall": {
+      "name": "Flooded Temple · Sunken Hall", "background": "flooded_temple_hall", "world_width": 7000,
+      "bounds": [80, 6920, 420, 625], "spawn": [180, 545], "camera_follow": true,
+      "props": {"green_water": [[0, 7000]], "wall_statues": [720, 1420, 2290, 3100, 3980, 4820, 5660], "exit_arch": 6670},
+      "waves": [
+        {"id": "fishman_first_four", "trigger_x": 1050, "enemy": "fishman", "count": 4, "spawn_points": [[1720, 470], [1900, 540], [2080, 600], [2260, 505]], "entry": "water_rise", "entry_duration": 1.3},
+        {"id": "fishman_second_four", "trigger_x": 3650, "enemy": "fishman", "count": 4, "spawn_points": [[4300, 475], [4480, 545], [4660, 600], [4840, 510]], "entry": "water_rise", "entry_duration": 1.3}
+      ],
+      "doors": [{"x": 6670, "y": 520, "radius": 165, "label": "MEDUSA'S LAIR", "style": "temple_arch", "target_level": "medusas_lair", "requires_clear": true}]
+    }
+  }
+}

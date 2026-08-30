@@ -1,0 +1,16 @@
+{
+  "id": "skeleton",
+  "display_name": "Skeleton",
+  "title": "Reanimated Warrior",
+  "playable": true,
+  "roster_index": 45,
+  "armor": [212, 207, 184],
+  "accent": [88, 82, 75],
+  "glow": [245, 134, 58],
+  "emblem": "BONE",
+  "texture_dir": "skeleton",
+  "starting_weapon": "rusty_sword",
+  "base_health": 80,
+  "max_mana": 0,
+  "has_magic": false
+}

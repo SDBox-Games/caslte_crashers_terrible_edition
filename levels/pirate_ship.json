@@ -1,0 +1,35 @@
+{
+  "id": "pirate_ship",
+  "name": "Pirate Ship",
+  "music": "armonicamente-game-setting-fantasy-142092",
+  "mode": "pirate_ship",
+  "start_scene": "voyage",
+  "unlocks": ["deserts"],
+  "scenes": {
+    "voyage": {
+      "name": "Pirate Ship",
+      "background": "pirate_ship",
+      "world_width": 1280,
+      "bounds": [175, 1105, 420, 595],
+      "spawn": [300, 530],
+      "camera_follow": false,
+      "intro_duration": 7.5,
+      "approach_duration": 9.0,
+      "evasive_duration": 4.5,
+      "parallel_duration": 5.0,
+      "battle_duration": 60.0,
+      "sinking_duration": 7.5,
+      "pirate_interval": 2.25,
+      "bomb_interval": 2.8,
+      "next_level": "deserts",
+      "breakables": [
+        {"id": "barrel_1", "kind": "pirate_barrel", "x": 365, "y": 550, "health": 3, "output": {"type": "random_food"}},
+        {"id": "barrel_2", "kind": "pirate_barrel", "x": 530, "y": 505, "health": 3, "output": {"type": "random_food"}},
+        {"id": "barrel_3", "kind": "pirate_barrel", "x": 765, "y": 560, "health": 3, "output": {"type": "random_food"}},
+        {"id": "barrel_4", "kind": "pirate_barrel", "x": 910, "y": 510, "health": 3, "output": {"type": "random_food"}}
+      ],
+      "waves": [],
+      "doors": []
+    }
+  }
+}

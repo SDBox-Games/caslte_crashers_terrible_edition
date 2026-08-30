@@ -1,0 +1,153 @@
+{
+  "id": "flowery_field",
+  "name": "Flowery Field",
+  "music": "map",
+  "start_scene": "flower_road",
+  "unlocks": ["wedding_crash"],
+  "scenes": {
+    "flower_road": {
+      "name": "Flowery Field",
+      "background": "flowery_field",
+      "world_width": 9000,
+      "bounds": [80, 8840, 420, 625],
+      "spawn": [230, 545],
+      "camera_follow": true,
+      "props": {
+        "cave_exit": 120,
+        "catapults": [6260, 6470, 6680, 6890],
+        "mountain_edge": 7100
+      },
+      "waves": [
+        {
+          "id": "first_bees",
+          "trigger_x": 1050,
+          "count": 6,
+          "enemy": "bee",
+          "spawn_points": [[1230, 470], [1340, 535], [1460, 455], [1580, 570], [1700, 485], [1820, 545]],
+          "entry": "bee_drop",
+          "entry_durations": [0.45, 0.75, 1.05, 1.35, 1.65, 1.95]
+        },
+        {
+          "id": "second_bees",
+          "trigger_x": 2850,
+          "count": 6,
+          "enemy": "bee",
+          "spawn_points": [[3010, 485], [3130, 555], [3250, 455], [3370, 535], [3490, 475], [3610, 570]],
+          "entry": "bee_drop",
+          "entry_durations": [0.4, 0.7, 1.0, 1.3, 1.6, 1.9]
+        },
+        {
+          "id": "beekeeper_patrol",
+          "trigger_x": 4450,
+          "count": 5,
+          "types": ["beekeeper", "bee", "bee", "beekeeper", "bee"],
+          "spawn_points": [[4680, 510], [4780, 455], [4890, 570], [5030, 545], [5150, 485]]
+        }
+      ],
+      "story_events": [
+        {
+          "id": "catapult_assault",
+          "trigger_x": 5850,
+          "camera_x": 5790,
+          "duration": 8.4,
+          "after_wave_clear": "beekeeper_patrol",
+          "effects": [
+            {"at": 2.2, "kind": "shake", "duration": 0.35, "strength": 0.35},
+            {"at": 3.45, "kind": "shake", "duration": 0.35, "strength": 0.35},
+            {"at": 5.1, "kind": "shake", "duration": 0.25, "strength": 0.25}
+          ]
+        }
+      ],
+      "doors": []
+    },
+    "church_roof": {
+      "name": "Church Rooftops",
+      "background": "church_rooftop",
+      "world_width": 9300,
+      "bounds": [80, 9200, 420, 625],
+      "spawn": [230, 545],
+      "camera_follow": true,
+      "elevation": [
+        {"from": 520, "to": 1120, "start": 0, "end": -320},
+        {"from": 5900, "to": 6520, "start": -320, "end": 0}
+      ],
+      "props": {
+        "landing": 230,
+        "metal_ladder": 760,
+        "village_reveal": 1300,
+        "tower_one": 2450,
+        "burning_houses": [2950, 3340],
+        "roof": [4200, 5580],
+        "drop": 6050,
+        "pillars": [6500, 6800, 7100, 7400, 7700],
+        "tower_two": 8150,
+        "window": 8900
+      },
+      "story_events": [
+        {
+          "id": "village_bombardment",
+          "trigger_x": 2050,
+          "camera_x": 2010,
+          "duration": 7.4,
+          "allow_movement": true,
+          "effects": [
+            {"at": 1.55, "kind": "shake", "duration": 0.38, "strength": 0.42},
+            {"at": 2.85, "kind": "shake", "duration": 0.42, "strength": 0.48},
+            {"at": 4.45, "kind": "shake", "duration": 0.48, "strength": 0.52},
+            {"at": 5.9, "kind": "shake", "duration": 0.48, "strength": 0.52}
+          ]
+        }
+      ],
+      "waves": [
+        {
+          "id": "tower_guards",
+          "trigger_x": 2380,
+          "after_story": "village_bombardment",
+          "count": 3,
+          "enemy": "conehead",
+          "spawn_points": [[2510, 490], [2630, 550], [2750, 510]],
+          "entry": "tower_door"
+        },
+        {
+          "id": "roof_guards",
+          "trigger_x": 4300,
+          "count": 6,
+          "enemy": "conehead",
+          "spawn_points": [[4490, 475], [4610, 550], [4730, 510], [4860, 575], [4990, 485], [5120, 545]]
+        },
+        {
+          "id": "lower_guards",
+          "trigger_x": 6850,
+          "count": 4,
+          "types": ["conehead", "conehead", "buff_conehead", "conehead"],
+          "spawn_points": [[7050, 475], [7200, 550], [7380, 525], [7540, 580]]
+        }
+      ],
+      "breakables": [
+        {
+          "id": "church_window",
+          "kind": "church_window",
+          "x": 8900,
+          "y": 520,
+          "health": 6,
+          "blocking": true,
+          "block_radius": 105,
+          "requires": "sword",
+          "break_notice": "THE WINDOW SHATTERED"
+        }
+      ],
+      "doors": [
+        {
+          "x": 9070,
+          "y": 520,
+          "radius": 115,
+          "label": "WEDDING CRASH",
+          "style": "window",
+          "target_level": "wedding_crash",
+          "requires_clear": true,
+          "requires_flag": "breakable:church_window"
+        }
+      ]
+    }
+  }
+}

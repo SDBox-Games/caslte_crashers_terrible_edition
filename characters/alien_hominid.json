@@ -1,0 +1,11 @@
+{
+  "id":"alien_hominid","display_name":"Alien Hominid","title":"Orb Invader","playable":true,"roster_index":82,
+  "armor":[242,222,49],"accent":[67,128,57],"glow":[112,255,119],"emblem":"ORB","texture_dir":"alien_hominid",
+  "starting_weapon":"alien_staff","base_health":90,"max_mana":125,"has_magic":true,
+  "magic":{"element":"alien","texture_dir":"alien_hominid","abilities":{
+    "x":{"kind":"projectile","texture":"projectile","unlock_magic":0,"cost":8},
+    "y":{"kind":"alien_orb","texture":"splash","unlock_magic":2,"cost":20,"radius":105},
+    "a":{"kind":"jump","texture":"jump","unlock_magic":4,"cost":15},
+    "b":{"kind":"infusion","texture":"infusion","unlock_magic":6,"cost":22}
+  }}
+}

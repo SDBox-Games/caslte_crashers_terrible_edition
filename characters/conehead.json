@@ -1,0 +1,16 @@
+{
+  "id": "conehead",
+  "display_name": "Conehead",
+  "title": "Energy Guard",
+  "playable": false,
+  "roster_index": 40,
+  "armor": [92, 96, 108],
+  "accent": [174, 65, 71],
+  "glow": [95, 231, 255],
+  "emblem": "LASER",
+  "texture_dir": "conehead",
+  "starting_weapon": "lightsaber",
+  "base_health": 110,
+  "max_mana": 0,
+  "has_magic": false
+}

@@ -1,0 +1,5 @@
+{
+  "id": "forest_maul",
+  "name": "Forest Maul",
+  "modifiers": {"strength": 2, "defense": 1, "magic": 0, "agility": -1}
+}

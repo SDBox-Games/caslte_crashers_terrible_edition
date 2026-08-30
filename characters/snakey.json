@@ -1,0 +1,11 @@
+{
+  "id": "snakey", "display_name": "Snakey", "title": "Swamp Serpent",
+  "playable": true, "roster_index": 46,
+  "armor": [75, 139, 54], "accent": [209, 188, 61], "glow": [129, 220, 79],
+  "emblem": "SNAKE", "texture_dir": "snakey", "starting_weapon": "swamp_sword",
+  "base_health": 100, "max_mana": 75, "has_magic": true,
+  "magic": {
+    "element": "poison",
+    "texture_dir": "snakey"
+  }
+}

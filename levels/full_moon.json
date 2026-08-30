@@ -1,0 +1,69 @@
+{
+  "id": "full_moon", "name": "Full Moon", "music": "map", "start_scene": "moon_path", "unlocks": ["snow_world"],
+  "scenes": {
+    "moon_path": {
+      "name": "Full Moon · Mountain Path", "background": "full_moon_path", "world_width": 9600,
+      "bounds": [80, 9520, 420, 625], "spawn": [190, 545], "camera_follow": true,
+      "elevation": [
+        {"from": 700, "to": 1700, "start": 0, "end": -390},
+        {"from": 2750, "to": 3550, "start": -390, "end": -720},
+        {"from": 4250, "to": 5700, "start": -720, "end": -1190},
+        {"from": 6250, "to": 7150, "start": -1190, "end": -820}
+      ],
+      "props": {
+        "wooden_arch": 260,
+        "brown_stone": [[0, 9600]],
+        "boulder_zones": [
+          {"id": "first_climb", "from": 1250, "to": 2700, "interval": 1.55},
+          {"id": "second_climb", "from": 3000, "to": 4250, "interval": 1.45},
+          {"id": "long_climb", "from": 4450, "to": 6100, "interval": 1.25}
+        ],
+        "boulder_stop_x": 6100,
+        "hut": 8120, "first_ladder": 8750
+      },
+      "breakables": [
+        {"id": "path_mushroom", "kind": "full_moon_mushroom", "x": 7470, "y": 545, "health": 2, "output": {"type": "random_food"}, "break_notice": "THE MUSHROOM DROPPED FOOD"}
+      ],
+      "weapons": [
+        {"id": "stoveface_mace", "name": "Stoveface Mace", "x": 8250, "y": 540}
+      ],
+      "waves": [
+        {"id": "first_peak_stovefaces", "trigger_x": 1550, "count": 3, "types": ["buff_stoveface", "stoveface", "stoveface"], "spawn_points": [[2050, 500], [2240, 565], [2430, 610]]},
+        {"id": "second_peak_stovefaces", "trigger_x": 3650, "count": 3, "types": ["buff_stoveface", "stoveface", "stoveface"], "spawn_points": [[3920, 490], [4090, 555], [4250, 610]]},
+        {"id": "long_peak_buff", "trigger_x": 5650, "enemy": "buff_stoveface", "count": 1, "spawn_points": [[5940, 535]]},
+        {"id": "downhill_idle_pair", "trigger_x": 6320, "enemy": "stoveface", "count": 2, "spawn_points": [[6720, 500], [6910, 585]], "entry": "wake", "entry_duration": 1.0},
+        {"id": "hut_ambush", "trigger_x": 7850, "enemy": "stoveface", "count": 4, "spawn_points": [[8100, 500], [8270, 575], [8620, 490], [8750, 565]], "entries": ["door_peek", "door_peek", "ladder_down", "ladder_down"], "entry_duration": 1.45}
+      ],
+      "doors": [
+        {"x": 8750, "y": 515, "radius": 120, "label": "CLIMB LADDER", "style": "full_moon_ladder", "target": "upper_camp", "target_spawn": [220, 545], "requires_clear": true}
+      ]
+    },
+    "upper_camp": {
+      "name": "Full Moon · Upper Camp", "background": "full_moon_upper", "world_width": 2800,
+      "bounds": [80, 2720, 420, 625], "spawn": [220, 545], "camera_follow": true,
+      "props": {"arrival_ladder": 120, "super_mushroom": 610, "hut": 1650, "second_ladder": 2300},
+      "breakables": [
+        {"id": "super_mushroom", "kind": "full_moon_super_mushroom", "x": 610, "y": 545, "health": 5, "output": {"type": "random_food"}, "break_notice": "SUPER MUSHROOM FOOD FOUND"},
+        {"id": "upper_hut", "kind": "full_moon_hut", "x": 1650, "y": 535, "health": 6, "break_notice": "THE HUT HID A MONEY BAG"}
+      ],
+      "loot": [
+        {"id": "upper_hut_gold", "kind": "gold_bag", "x": 1650, "y": 545, "gold": 5, "visible_after_breakable": "upper_hut"}
+      ],
+      "waves": [],
+      "doors": [
+        {"x": 2300, "y": 515, "radius": 120, "label": "CLIMB TO THE ICE", "style": "full_moon_ladder", "target": "ice_ridge", "target_spawn": [190, 545]}
+      ]
+    },
+    "ice_ridge": {
+      "name": "Full Moon · Ice Ridge", "background": "full_moon_ice", "world_width": 4200,
+      "bounds": [80, 4120, 420, 625], "spawn": [190, 545], "camera_follow": true,
+      "props": {"arrival_ladder": 100, "ice_zone": [900, 4200]},
+      "waves": [
+        {"id": "ice_thief_welcome", "trigger_x": 850, "enemy": "ice_thief", "count": 5, "spawn_points": [[1450, 470], [1630, 535], [1810, 600], [1990, 500], [2170, 570]], "entry": "ice_rise", "entry_duration": 1.25}
+      ],
+      "doors": [
+        {"x": 3970, "y": 515, "radius": 150, "label": "SNOW WORLD", "style": "ice_exit", "target_level": "snow_world", "requires_clear": true}
+      ]
+    }
+  }
+}

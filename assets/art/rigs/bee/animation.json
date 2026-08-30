@@ -1,0 +1,15 @@
+{
+  "id": "bee",
+  "canvas": [640, 640],
+  "animations": {
+    "flap": {
+      "duration": 0.42,
+      "loop": true,
+      "layers": [
+        {"part": "wing", "offset": [-28, -12], "rotation": -18, "keyframes": [{"time": 0.0, "rotation": -20}, {"time": 0.105, "rotation": 34}, {"time": 0.21, "rotation": -20}, {"time": 0.315, "rotation": -44}, {"time": 0.42, "rotation": -20}]},
+        {"part": "wing", "offset": [28, -12], "mirror": true, "rotation": 18, "keyframes": [{"time": 0.0, "rotation": 20}, {"time": 0.105, "rotation": -34}, {"time": 0.21, "rotation": 20}, {"time": 0.315, "rotation": 44}, {"time": 0.42, "rotation": 20}]},
+        {"part": "body", "keyframes": [{"time": 0.0, "y": 0}, {"time": 0.105, "y": -3}, {"time": 0.21, "y": 0}, {"time": 0.315, "y": 2}, {"time": 0.42, "y": 0}]}
+      ]
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "horse",
+  "name": "Royal Horse",
+  "style": "horse",
+  "speed": 350,
+  "seat_height": 120,
+  "mount_radius": 62,
+  "body_color": [137, 88, 52],
+  "belly_color": [205, 164, 105],
+  "saddle_color": [117, 38, 43],
+  "abilities": {
+    "x": {"kind": "kick", "damage": 5, "reach": 125, "cooldown": 0.55},
+    "y": {"kind": "rider_sword"},
+    "a": {"kind": "dismount"}
+  }
+}

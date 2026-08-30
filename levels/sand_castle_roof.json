@@ -1,0 +1,16 @@
+{
+  "id": "sand_castle_roof", "name": "Sand Castle Roof", "music": "map", "start_scene": "roof", "unlocks": ["flooded_temple", "marsh"],
+  "scenes": {"roof": {
+    "name": "Sand Castle Roof", "background": "sand_castle_roof", "world_width": 11200,
+    "bounds": [100, 10950, 420, 620], "spawn": [260, 530], "camera_follow": true,
+    "waves": [
+      {"id": "roof_melee_one", "trigger_x": 1450, "count": 3, "types": ["saracen", "saracen", "saracen"], "spawn_points": [[1810, 460], [1930, 545], [2050, 590]]},
+      {"id": "roof_melee_two", "trigger_x": 3100, "count": 2, "types": ["saracen", "saracen"], "spawn_points": [[3430, 475], [3550, 570]]},
+      {"id": "roof_melee_three", "trigger_x": 4600, "count": 2, "types": ["saracen", "saracen"], "spawn_points": [[4940, 475], [5070, 570]]},
+      {"id": "roof_melee_four", "trigger_x": 6000, "count": 3, "types": ["saracen", "saracen", "saracen"], "spawn_points": [[6340, 465], [6460, 550], [6600, 590]]},
+      {"id": "roof_ramp_guard", "trigger_x": 7420, "count": 2, "types": ["saracen", "chain_guard"], "spawn_points": [[7800, 470], [7950, 560]]}
+    ],
+    "props": {"front_towers": [980, 2700, 4300, 5850, 7160], "back_towers": [500, 2180, 3750, 5350, 6800], "ramp_x": 7200, "volleyball_start": 8500, "volleyball_center": 9700, "volleyball_end": 10800, "volley_events": [{"id": "volley_one", "trigger_x": 1530, "left": 0, "right": 5}, {"id": "volley_two", "trigger_x": 3160, "left": 2, "right": 4}, {"id": "volley_three", "trigger_x": 4660, "left": 2, "right": 5}]},
+    "doors": []
+  }}
+}

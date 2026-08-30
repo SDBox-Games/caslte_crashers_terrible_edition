@@ -1,0 +1,16 @@
+{
+  "id": "buff_thief",
+  "display_name": "Buff Thief",
+  "title": "Forest Brute",
+  "playable": true,
+  "roster_index": 8,
+  "armor": [117, 76, 43],
+  "accent": [91, 55, 31],
+  "glow": [238, 190, 93],
+  "emblem": "BAG",
+  "texture_dir": "barbarian",
+  "starting_weapon": "rusty_sword",
+  "base_health": 140,
+  "max_mana": 0,
+  "has_magic": false
+}

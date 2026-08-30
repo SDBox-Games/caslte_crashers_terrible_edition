@@ -1,0 +1,117 @@
+{
+  "id": "wizard_castle_interior",
+  "name": "Wizard Castle Interior",
+  "music": "map",
+  "start_scene": "crystal_hall",
+  "unlocks": ["wizard_castle_final"],
+  "scenes": {
+    "crystal_hall": {
+      "name": "Wizard Castle Interior · Crystal Hall",
+      "background": "wizard_crystal_hall",
+      "world_width": 6900,
+      "bounds": [90, 6810, 420, 625],
+      "spawn": [220, 545],
+      "camera_follow": true,
+      "props": {
+        "purple_flames": [[520, 520, 170], [1320, 520, 330], [3040, 520, 185]],
+        "steel_tables": [760, 2860],
+        "steel_chairs": [[660, -1], [860, 1], [2760, -1], [2960, 1]],
+        "wall_skeletons": [1120, 5450],
+        "stairs": [1450, 2550],
+        "broken_house": 2000,
+        "floating_house_pieces": [[1850, 270], [2050, 215], [2200, 330]],
+        "floating_stone": 3650,
+        "sky_hole": [4250, 5000],
+        "skeleton_crystal": 5350,
+        "wood_house": 5840,
+        "arch": 6550
+      },
+      "waves": [
+        {"id": "floating_house_cult", "trigger_x": 1780, "count": 4, "enemy": "cult_minion", "spawn_points": [[1540, 475], [1640, 585], [2380, 475], [2480, 585]]},
+        {"id": "iron_table_cult", "trigger_x": 2790, "count": 4, "enemy": "cult_minion", "spawn_points": [[2520, 470], [2630, 580], [3240, 470], [3350, 580]]},
+        {"id": "sky_hole_cult", "trigger_x": 4520, "count": 4, "enemy": "cult_minion", "spawn_points": [[4170, 475], [4280, 585], [4890, 475], [5000, 585]]}
+      ],
+      "doors": [{"x": 6550, "y": 515, "radius": 150, "label": "PORTAL CHAMBER", "target": "portal_hub", "requires_clear": true, "target_spawn": [180, 545]}]
+    },
+    "portal_hub": {
+      "name": "Wizard Castle Interior · Four Portals",
+      "background": "wizard_portal_hub",
+      "world_width": 1600,
+      "bounds": [90, 1510, 430, 625],
+      "spawn": [180, 545],
+      "camera_follow": false,
+      "props": {"purple_flames": [[175, 520, 230]], "portals": [[430, "painter"], [710, "cyclops"], [990, "necromancer"], [1270, "final"]]},
+      "waves": [],
+      "doors": []
+    },
+    "painter_arena": {
+      "name": "Painter Boss",
+      "background": "wizard_painter_arena",
+      "world_width": 4650,
+      "bounds": [90, 4560, 420, 625],
+      "spawn": [230, 545],
+      "camera_follow": true,
+      "props": {"rug": 1780, "canvas": 2050, "lift": 2250, "tv": 700, "screens": [3820, 4070], "stairs": 4400},
+      "waves": [],
+      "doors": []
+    },
+    "crystal_room_one": {
+      "name": "First Crystal Room",
+      "background": "wizard_crystal_room",
+      "world_width": 1600,
+      "bounds": [90, 1510, 430, 625],
+      "spawn": [180, 545],
+      "camera_follow": false,
+      "props": {"seal_crystal": 1050},
+      "breakables": [{"id": "painter_seal", "kind": "wizard_seal_crystal", "x": 1050, "y": 540, "health": 18, "requires": "sword", "blocking": false}],
+      "waves": [],
+      "doors": []
+    },
+    "cyclops_arena": {
+      "name": "Cyclops",
+      "background": "wizard_cyclops_arena",
+      "world_width": 3900,
+      "bounds": [90, 3810, 420, 625],
+      "spawn": [220, 545],
+      "camera_follow": true,
+      "props": {"golden_entrance": 250, "hatch": 1720, "golden_exit": 3570, "red_crystals": [680, 1120, 2350, 2920], "bones": [500, 960, 2520, 3180]},
+      "waves": [],
+      "doors": []
+    },
+    "crystal_room_two": {
+      "name": "Second Crystal Room",
+      "background": "wizard_crystal_room",
+      "world_width": 1600,
+      "bounds": [90, 1510, 430, 625],
+      "spawn": [180, 545],
+      "camera_follow": false,
+      "props": {"seal_crystal": 1050},
+      "breakables": [{"id": "cyclops_seal", "kind": "wizard_seal_crystal", "portal_unlock": "necromancer", "x": 1050, "y": 540, "health": 22, "requires": "sword", "blocking": false}],
+      "waves": [],
+      "doors": []
+    },
+    "necromancer_arena": {
+      "name": "Necromancer",
+      "background": "wizard_necromancer_arena",
+      "world_width": 3500,
+      "bounds": [90, 3410, 420, 625],
+      "spawn": [220, 545],
+      "camera_follow": true,
+      "props": {"summoning_point": 1720, "golden_exit": 3210},
+      "waves": [],
+      "doors": []
+    },
+    "crystal_room_three": {
+      "name": "Third Crystal Room",
+      "background": "wizard_crystal_room",
+      "world_width": 1600,
+      "bounds": [90, 1510, 430, 625],
+      "spawn": [180, 545],
+      "camera_follow": false,
+      "props": {"seal_crystal": 1050},
+      "breakables": [{"id": "necromancer_seal", "kind": "wizard_seal_crystal", "portal_unlock": "final", "x": 1050, "y": 540, "health": 26, "requires": "sword", "blocking": false}],
+      "waves": [],
+      "doors": []
+    }
+  }
+}

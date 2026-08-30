@@ -1,0 +1,27 @@
+{
+  "id": "abandoned_mill",
+  "name": "Abandoned Mill",
+  "music": "abandoned_mill",
+  "mode": "mill_chase",
+  "start_scene": "mill_chase",
+  "unlocks": ["rapids_ride"],
+  "scenes": {
+    "mill_chase": {
+      "name": "Abandoned Mill",
+      "background": "abandoned_mill",
+      "world_width": 1280,
+      "bounds": [180, 1040, 355, 620],
+      "spawn": [500, 520],
+      "camera_follow": false,
+      "intro_duration": 9.4,
+      "chase_duration": 30.0,
+      "finale_duration": 5.8,
+      "chase_speed": 350,
+      "first_obstacle_delay": 0.9,
+      "obstacle_spacing": 1280,
+      "next_level": "rapids_ride",
+      "waves": [],
+      "doors": []
+    }
+  }
+}

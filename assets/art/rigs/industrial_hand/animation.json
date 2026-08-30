@@ -1,0 +1,13 @@
+{
+  "id": "industrial_hand",
+  "animations": {
+    "idle": {"duration":1.0,"loop":true,"layers":[
+      {"part":"arm","offset":[-80,0],"keyframes":[{"time":0},{"time":1.0}]},
+      {"part":"hand","offset":[55,0],"keyframes":[{"time":0},{"time":0.5,"x":8},{"time":1.0}]}
+    ]},
+    "slam": {"duration":1.25,"loop":false,"layers":[
+      {"part":"arm","offset":[-80,0],"keyframes":[{"time":0,"scale_x":0.6},{"time":0.48,"scale_x":1.45},{"time":0.78,"scale_x":1.45},{"time":1.25,"scale_x":0.6}]},
+      {"part":"hand","offset":[55,0],"keyframes":[{"time":0,"x":-90},{"time":0.48,"x":190},{"time":0.78,"x":190},{"time":1.25,"x":-90}]}
+    ]}
+  }
+}

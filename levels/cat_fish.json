@@ -1,0 +1,26 @@
+{
+  "id": "cat_fish",
+  "name": "Cat Fish",
+  "music": "cat_fish",
+  "mode": "cat_fish",
+  "start_scene": "river_battle",
+  "unlocks": ["tall_grass_field"],
+  "scenes": {
+    "river_battle": {
+      "name": "Cat Fish",
+      "background": "cat_fish",
+      "world_width": 1280,
+      "bounds": [110, 1010, 400, 610],
+      "spawn": [440, 535],
+      "camera_follow": false,
+      "intro_duration": 8.0,
+      "boss_health": 320,
+      "vomit_interval": 6.2,
+      "paw_interval": 7.5,
+      "fin_interval": 10.5,
+      "stun_duration": 4.0,
+      "waves": [],
+      "doors": []
+    }
+  }
+}

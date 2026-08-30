@@ -1,0 +1,5 @@
+{
+  "id": "lightsaber",
+  "name": "Energy Sword",
+  "modifiers": {"strength": 2, "defense": 0, "magic": 1, "agility": 1}
+}

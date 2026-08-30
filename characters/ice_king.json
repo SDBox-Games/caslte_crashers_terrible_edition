@@ -1,0 +1,11 @@
+{
+  "id": "ice_king", "display_name": "Ice King", "title": "Frozen Monarch", "playable": true, "roster_index": 54,
+  "armor": [33, 75, 132], "accent": [132, 217, 241], "glow": [207, 248, 255], "emblem": "KING",
+  "texture_dir": "ice_king", "starting_weapon": "meat_sword", "base_health": 120, "max_mana": 130, "has_magic": true,
+  "magic": {"element": "ice", "texture_dir": "ice", "abilities": {
+    "x": {"kind": "projectile", "texture": "projectile", "unlock_magic": 0, "cost": 10, "status": "freeze", "status_duration": 5.0},
+    "y": {"kind": "splash", "texture": "splash", "unlock_magic": 2, "cost": 20, "status": "freeze", "status_duration": 5.0},
+    "a": {"kind": "jump", "texture": "jump", "unlock_magic": 4, "cost": 16, "status": "freeze", "status_duration": 5.0},
+    "b": {"kind": "infusion", "texture": "infusion", "unlock_magic": 6, "cost": 24, "status": "freeze", "status_duration": 5.0}
+  }}
+}

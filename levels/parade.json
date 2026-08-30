@@ -1,0 +1,27 @@
+{
+  "id": "parade",
+  "name": "Parade",
+  "music": "map",
+  "mode": "parade_ride",
+  "start_scene": "parade_cart",
+  "unlocks": ["cyclops_cave"],
+  "scenes": {
+    "parade_cart": {
+      "name": "Parade",
+      "background": "parade_ride",
+      "world_width": 1280,
+      "bounds": [230, 760, 330, 465],
+      "spawn": [390, 410],
+      "camera_follow": false,
+      "intro_duration": 11.5,
+      "guard_duration": 60.0,
+      "thief_boss_delay": 10.0,
+      "victory_duration": 10.0,
+      "scroll_speed": 245,
+      "boss_health": 170,
+      "next_level": "cyclops_cave",
+      "waves": [],
+      "doors": []
+    }
+  }
+}

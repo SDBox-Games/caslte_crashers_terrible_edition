@@ -1,0 +1,54 @@
+{
+  "id": "cyclops_gate",
+  "name": "Cyclop's Gate",
+  "music": "cyclops_cave",
+  "start_scene": "lava_ascent",
+  "unlocks": ["cyclops_fortress"],
+  "scenes": {
+    "lava_ascent": {
+      "name": "Cyclop's Gate",
+      "background": "cyclops_gate",
+      "world_width": 5100,
+      "bounds": [80, 5020, 420, 625],
+      "spawn": [240, 545],
+      "camera_follow": true,
+      "elevation": [
+        {"from": 720, "to": 4260, "start": 0, "end": -315}
+      ],
+      "props": {
+        "cave_exit": 180,
+        "fortress_arch": 4740,
+        "lava_walls": [
+          {"id": "lower_vent", "x": 1120, "off_time": 3.0, "on_time": 3.0, "damage": 18},
+          {"id": "middle_vent", "x": 2410, "off_time": 3.0, "on_time": 3.0, "damage": 18},
+          {"id": "upper_vent", "x": 3580, "off_time": 3.0, "on_time": 3.0, "damage": 18}
+        ]
+      },
+      "breakables": [
+        {
+          "id": "fortress_door",
+          "kind": "fortress_gate",
+          "x": 4580,
+          "y": 535,
+          "health": 28,
+          "blocking": true,
+          "block_radius": 112,
+          "requires": "sword",
+          "break_notice": "THE FORTRESS DOOR IS OPEN"
+        }
+      ],
+      "waves": [],
+      "doors": [
+        {
+          "x": 4800,
+          "y": 520,
+          "radius": 135,
+          "label": "CYCLOP'S FORTRESS",
+          "style": "fortress_gate",
+          "target_level": "cyclops_fortress",
+          "requires_flag": "breakable:fortress_door"
+        }
+      ]
+    }
+  }
+}

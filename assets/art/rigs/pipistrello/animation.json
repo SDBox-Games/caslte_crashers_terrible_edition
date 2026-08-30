@@ -1,0 +1,35 @@
+{
+  "id": "pipistrello",
+  "canvas": [1024, 1024],
+  "animations": {
+    "flying": {
+      "duration": 0.76,
+      "loop": true,
+      "layers": [
+        {"part": "wing_left", "offset": [-60, -40], "keyframes": [{"time": 0.0, "rotation": 12}, {"time": 0.19, "rotation": -31}, {"time": 0.38, "rotation": 12}, {"time": 0.57, "rotation": 29}, {"time": 0.76, "rotation": 12}]},
+        {"part": "wing_right", "offset": [60, -40], "keyframes": [{"time": 0.0, "rotation": -12}, {"time": 0.19, "rotation": 31}, {"time": 0.38, "rotation": -12}, {"time": 0.57, "rotation": -29}, {"time": 0.76, "rotation": -12}]},
+        {"part": "body", "keyframes": [{"time": 0.0, "y": 0}, {"time": 0.19, "y": -9}, {"time": 0.38, "y": 0}, {"time": 0.57, "y": 7}, {"time": 0.76, "y": 0}]}
+      ]
+    },
+    "ground": {
+      "duration": 0.9,
+      "loop": true,
+      "layers": [
+        {"part": "wing_left", "offset": [-60, -40], "rotation": 19, "keyframes": [{"time": 0.0, "rotation": -4}, {"time": 0.45, "rotation": 5}, {"time": 0.9, "rotation": -4}]},
+        {"part": "wing_right", "offset": [60, -40], "rotation": -19, "keyframes": [{"time": 0.0, "rotation": 4}, {"time": 0.45, "rotation": -5}, {"time": 0.9, "rotation": 4}]},
+        {"part": "feet", "offset": [0, 85]},
+        {"part": "body"}
+      ]
+    },
+    "tongue": {
+      "duration": 1.0,
+      "loop": false,
+      "layers": [
+        {"part": "wing_left", "offset": [-60, -40], "rotation": 12},
+        {"part": "wing_right", "offset": [60, -40], "rotation": -12},
+        {"part": "body"},
+        {"part": "tongue", "offset": [24, 9], "keyframes": [{"time": 0.0, "scale_x": 0.03, "y": 0}, {"time": 0.5, "scale_x": 1.0, "y": 20}, {"time": 1.0, "scale_x": 0.03, "y": 0}]}
+      ]
+    }
+  }
+}

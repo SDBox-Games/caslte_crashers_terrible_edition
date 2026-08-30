@@ -1,0 +1,62 @@
+{
+  "id": "marsh", "name": "Marsh", "music": "map", "start_scene": "cemetery_road", "unlocks": ["corn_boss"],
+  "scenes": {
+    "cemetery_road": {
+      "name": "Marsh · Cemetery Road", "background": "marsh_cemetery", "world_width": 6100,
+      "bounds": [80, 6020, 420, 625], "spawn": [190, 545], "camera_follow": true,
+      "allies": [{"x": 1120, "y": 550, "pinned": true, "name": "PEASANT", "character": "peasant"}],
+      "props": {
+        "trees": [390, 920, 1720, 2360], "rescue": [1120, 550], "observer_tree": 770,
+        "observer_hill": 1480, "houses": [2580, 3220], "cemetery": [2450, 4940], "walls": [5050, 5520]
+      },
+      "waves": [
+        {"id": "marsh_rescue_pair", "trigger_x": 650, "count": 2, "types": ["skeleton", "skeleton"], "spawn_points": [[1120, 510], [1300, 555]]},
+        {"id": "marsh_rescue_left", "trigger_x": 900, "enemy": "skeleton", "count": 3, "spawn_points": [[510, 465], [390, 540], [270, 595]], "entry": "rush_right", "entry_duration": 1.3},
+        {"id": "cemetery_skeletons", "trigger_x": 2840, "enemy": "skeleton", "count": 2, "spawn_points": [[3820, 485], [3990, 570]], "entry": "rush_left", "entry_duration": 1.35}
+      ],
+      "breakables": [
+        {"id": "grave_01", "kind": "marsh_grave", "x": 2840, "y": 585, "health": 2, "output": {"type": "random_grave"}},
+        {"id": "grave_02", "kind": "marsh_grave", "x": 3120, "y": 585, "health": 2, "output": {"type": "random_grave"}},
+        {"id": "grave_03", "kind": "marsh_grave", "x": 3400, "y": 585, "health": 2, "output": {"type": "random_grave"}},
+        {"id": "grave_04", "kind": "marsh_grave", "x": 3680, "y": 585, "health": 2, "output": {"type": "random_grave"}},
+        {"id": "grave_05", "kind": "marsh_grave", "x": 3960, "y": 585, "health": 2, "output": {"type": "random_grave"}},
+        {"id": "grave_06", "kind": "marsh_grave", "x": 4240, "y": 585, "health": 2, "output": {"type": "random_grave"}},
+        {"id": "grave_07", "kind": "marsh_grave", "x": 2980, "y": 505, "health": 2, "output": {"type": "random_grave"}},
+        {"id": "grave_08", "kind": "marsh_grave", "x": 3340, "y": 505, "health": 2, "output": {"type": "random_grave"}},
+        {"id": "grave_09", "kind": "marsh_grave", "x": 3700, "y": 505, "health": 2, "output": {"type": "random_grave"}},
+        {"id": "grave_10", "kind": "marsh_grave", "x": 4060, "y": 505, "health": 2, "output": {"type": "random_grave"}},
+        {"id": "grave_11", "kind": "marsh_grave", "x": 3160, "y": 430, "health": 2, "output": {"type": "random_grave"}},
+        {"id": "grave_12", "kind": "marsh_grave", "x": 3610, "y": 430, "health": 2, "output": {"type": "random_grave"}},
+        {"id": "grave_13", "kind": "marsh_grave", "x": 4060, "y": 430, "health": 2, "output": {"type": "random_grave"}}
+      ],
+      "doors": [{"x": 5850, "y": 525, "radius": 135, "label": "SWAMP VILLAGE", "target": "swamp_village", "target_spawn": [180, 545], "requires_clear": true}]
+    },
+    "swamp_village": {
+      "name": "Marsh · Swamp Village", "background": "marsh_village", "world_width": 13200,
+      "bounds": [80, 13120, 420, 625], "spawn": [180, 545], "camera_follow": true,
+      "props": {
+        "revival_graves": [[710, 585], [990, 585], [1270, 585], [1550, 585], [850, 485], [1130, 485], [1410, 485], [1690, 485]],
+        "dead_peasants": [[2900, 530], [3120, 570]], "houses": [3900, 4540, 7400, 7850, 8700, 9300],
+        "peek_door": 4050, "trees": [5300, 7350, 8200], "wall": [5850, 6950], "frog": 6480,
+        "hut": 8900, "fence": [9250, 9650], "corn_start": 11200, "corn_end": 13100
+      },
+      "story_events": [
+        {"id": "grave_revival", "trigger_x": 280, "camera_x": 520, "duration": 7.2, "effects": [{"at": 1.2, "kind": "shake", "duration": 0.25, "strength": 0.16}, {"at": 3.1, "kind": "shake", "duration": 0.45, "strength": 0.35}]},
+        {"id": "peasant_rescue", "trigger_x": 8550, "camera_x": 8600, "duration": 6.5, "after_wave_clear": "tree_peasant_fight"}
+      ],
+      "waves": [
+        {"id": "revived_graves", "trigger_x": 0, "after_story": "grave_revival", "count": 8, "types": ["skeleton", "buff_skeleton", "skeleton", "skeleton", "buff_skeleton", "skeleton", "skeleton", "buff_skeleton"], "spawn_points": [[710, 585], [990, 585], [1270, 585], [1550, 585], [850, 485], [1130, 485], [1410, 485], [1690, 485]], "entry": "stone_wake", "entry_duration": 1.25},
+        {"id": "dead_peasant_snakeys", "trigger_x": 2580, "enemy": "snakey", "count": 3, "spawn_points": [[3150, 475], [3300, 550], [3460, 595]]},
+        {"id": "door_snakeys", "trigger_x": 3740, "enemy": "snakey", "count": 3, "spawn_points": [[4050, 520], [4720, 475], [4870, 575]], "entries": ["door_peek", "rush_left", "rush_left"]},
+        {"id": "tree_snakeys", "trigger_x": 5080, "enemy": "snakey", "count": 3, "spawn_points": [[5300, 470], [5450, 555], [5590, 595]]},
+        {"id": "wall_snakeys", "trigger_x": 6100, "enemy": "snakey", "count": 4, "spawn_points": [[6260, 475], [6420, 535], [6600, 580], [6760, 505]], "entry": "wall_jump", "entry_duration": 1.35},
+        {"id": "tree_peasant_fight", "trigger_x": 8000, "count": 5, "types": ["snakey", "snakey", "snakey", "snakey", "peasant"], "spawn_points": [[8120, 470], [8280, 535], [8440, 590], [8600, 505], [8750, 565]], "entries": ["rush_right", "rush_right", "rush_right", "rush_right", "rush_left"]},
+        {"id": "hut_rescue_snakeys", "trigger_x": 0, "after_story": "peasant_rescue", "enemy": "snakey", "count": 4, "spawn_points": [[9340, 465], [9500, 525], [9680, 585], [9840, 500]]},
+        {"id": "corn_road_snakeys", "trigger_x": 10500, "enemy": "snakey", "count": 4, "spawn_points": [[11000, 470], [11160, 535], [11320, 590], [11480, 505]]}
+      ],
+      "pets": [{"id": "snail", "name": "Snail", "x": 9020, "y": 545}],
+      "boss": {"kind": "marsh_troll_block", "name": "TROLL MOTHER", "trigger_x": 6500, "x": 7140, "y": 530, "health": 210, "requires_clear": true},
+      "doors": [{"x": 12950, "y": 525, "radius": 160, "label": "CORN FIELD", "target_level": "corn_boss", "requires_clear": true}]
+    }
+  }
+}

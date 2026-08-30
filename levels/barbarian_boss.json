@@ -1,0 +1,36 @@
+{
+  "id": "barbarian_boss",
+  "name": "Barbarian Boss",
+  "music": "barbarian_war",
+  "start_scene": "boss_arena",
+  "unlocks": ["forest_entrance", "dock"],
+  "scenes": {
+    "boss_arena": {
+      "name": "Giant Barbarian Arena",
+      "background": "barbarian_boss_arena",
+      "world_width": 1536,
+      "bounds": [70, 1466, 430, 625],
+      "spawn": [150, 545],
+      "camera_follow": true,
+      "props": {
+        "princesses": 880,
+        "rescue_princess": 1170,
+        "crowd": true,
+        "angry_gate": 1370
+      },
+      "story_events": [
+        {"id": "giant_arrival", "trigger_x": 500, "camera_x": 256, "duration": 6.8}
+      ],
+      "boss": {
+        "kind": "giant_barbarian",
+        "name": "GIANT BARBARIAN",
+        "trigger_x": 500,
+        "x": 820,
+        "y": 535,
+        "health": 190,
+        "requires_story": "giant_arrival",
+        "requires_clear": true
+      }
+    }
+  }
+}

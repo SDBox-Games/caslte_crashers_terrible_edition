@@ -1,0 +1,1 @@
+{"id":"alien_prisoner","display_name":"Alien Prisoner","title":"600KG Escapee","playable":false,"roster_index":83,"armor":[244,216,45],"accent":[69,147,64],"glow":[135,255,130],"emblem":"600","texture_dir":"alien_prisoner","starting_weapon":"alien_staff","base_health":180,"max_mana":150,"has_magic":true,"magic":{"element":"alien","texture_dir":"alien_hominid","abilities":{}}}

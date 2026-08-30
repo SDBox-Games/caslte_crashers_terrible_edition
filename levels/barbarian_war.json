@@ -1,0 +1,69 @@
+{
+  "id": "barbarian_war",
+  "name": "Barbarian War",
+  "music": "barbarian_war",
+  "start_scene": "warfront",
+  "unlocks": ["barbarian_boss"],
+  "scenes": {
+    "warfront": {
+      "name": "Barbarian War · Warfront",
+      "background": "war_drawbridge",
+      "world_width": 12450,
+      "bounds": [90, 12380, 430, 625],
+      "spawn": [245, 545],
+      "camera_follow": true,
+      "allies": [
+        {"x": 380, "y": 505, "name": "GRAY KNIGHT"},
+        {"x": 455, "y": 580, "name": "GRAY KNIGHT"},
+        {"x": 1490, "y": 535, "name": "WOUNDED GRAY KNIGHT", "pinned": true}
+      ],
+      "props": {
+        "drawbridge": [0, 820],
+        "river": [0, 820],
+        "pinned_knight": 1490,
+        "thieves": 3500,
+        "pond": [4380, 4850],
+        "flag_runner": 4720,
+        "ruined_wall": 6840,
+        "fortress_start": 7060,
+        "tiny_tree": 7700,
+        "beds": [8300, 8500, 8700, 8900, 9100],
+        "log_stairs": [9450, 9800],
+        "hay_tower": 10250
+      },
+      "food": [{"id": "cherry", "x": 7730, "y": 500, "heal_percent": 10}],
+      "story_events": [
+        {"id": "siege_arrival", "trigger_x": 5700, "camera_x": 5880, "duration": 7.2}
+      ],
+      "waves": [
+        {"id": "drawbridge_fight", "trigger_x": 390, "enemy": "barbarian", "count": 5, "spawn_points": [[720, 500], [790, 570], [900, 525], [1010, 590], [1110, 490]]},
+        {"id": "rescue_knight", "trigger_x": 1320, "count": 6, "types": ["guard_beater", "barbarian", "barbarian", "barbarian", "barbarian", "barbarian"], "spawn_points": [[1510, 535], [1700, 480], [1780, 570], [1890, 520], [1980, 590], [2070, 490]]},
+        {"id": "six_barbarians", "trigger_x": 2350, "enemy": "barbarian", "count": 6, "spawn_x": 2670},
+        {"id": "thief_ambush", "trigger_x": 3340, "count": 7, "types": ["thief", "thief", "barbarian", "barbarian", "barbarian", "barbarian", "barbarian"], "spawn_points": [[3550, 490], [3635, 575], [3770, 515], [3870, 585], [3980, 485], [4080, 550], [4180, 600]]},
+        {"id": "pond_flag", "trigger_x": 4580, "enemy": "barbarian", "count": 4, "spawn_points": [[4930, 480], [5020, 570], [5120, 515], [5220, 595]]},
+        {"id": "wall_defenders", "trigger_x": 7120, "enemy": "barbarian", "count": 4, "spawn_points": [[7360, 490], [7460, 575], [7570, 520], [7670, 600]]},
+        {"id": "sleeping_barracks", "trigger_x": 8210, "enemy": "barbarian", "count": 5, "sleeping": true, "spawn_points": [[8300, 515], [8500, 555], [8700, 500], [8900, 570], [9100, 520]]},
+        {"id": "tower_guard", "trigger_x": 10050, "enemy": "barbarian", "count": 2, "spawn_points": [[10220, 500], [10360, 575]]}
+      ],
+      "boss": {"kind": "siege_machine", "name": "BARBARIAN WAR MACHINE", "trigger_x": 5750, "x": 6350, "y": 540, "health": 150, "requires_story": "siege_arrival", "requires_clear": true},
+      "breakable_gate": {"x": 11860, "y": 535, "health": 16, "label": "SKULL GATE"},
+      "doors": [
+        {"x": 11860, "y": 535, "radius": 112, "label": "BRIDGE", "target": "bridge", "target_spawn": [170, 545], "requires_clear": true}
+      ]
+    },
+    "bridge": {
+      "name": "Barbarian Bridge",
+      "background": "barbarian_bridge",
+      "world_width": 2800,
+      "bounds": [70, 2710, 450, 590],
+      "spawn": [170, 535],
+      "camera_follow": true,
+      "waves": [
+        {"id": "bridge_three", "trigger_x": 1180, "enemy": "barbarian", "count": 3, "spawn_points": [[1450, 490], [1550, 550], [1650, 510]]}
+      ],
+      "doors": [
+        {"x": 2660, "y": 515, "radius": 105, "label": "ANGRY GATE", "target_level": "barbarian_boss", "requires_clear": true}
+      ]
+    }
+  }
+}

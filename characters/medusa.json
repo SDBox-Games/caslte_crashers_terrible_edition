@@ -1,0 +1,6 @@
+{
+  "id": "medusa", "display_name": "Medusa", "title": "Serpent Queen", "playable": true, "roster_index": 51,
+  "armor": [66, 142, 68], "accent": [230, 191, 67], "glow": [245, 221, 76], "emblem": "SNAKE",
+  "texture_dir": "medusa", "starting_weapon": "swamp_sword", "base_health": 120, "max_mana": 100,
+  "has_magic": true, "magic": {"element": "poison", "texture_dir": "green"}
+}

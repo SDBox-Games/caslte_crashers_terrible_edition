@@ -1,0 +1,5 @@
+{
+  "id": "royal_spear",
+  "name": "Royal Spear",
+  "modifiers": {"strength": 1, "defense": 4, "magic": 0, "agility": 1}
+}

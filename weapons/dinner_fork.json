@@ -1,0 +1,5 @@
+{
+  "id": "dinner_fork",
+  "name": "Dinner Fork",
+  "modifiers": {"strength": 0, "defense": 0, "magic": 0, "agility": 2}
+}

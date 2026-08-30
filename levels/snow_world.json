@@ -1,0 +1,53 @@
+{
+  "id": "snow_world", "name": "Snow World", "music": "map", "start_scene": "snow_fields", "unlocks": ["snow_store", "ice_castle"],
+  "scenes": {
+    "snow_fields": {
+      "name": "Snow World", "background": "snow_world", "world_width": 14700,
+      "bounds": [80, 14620, 420, 625], "spawn": [180, 545], "camera_follow": true,
+      "elevation": [{"from": 12500, "to": 13950, "start": 0, "end": -680}],
+      "props": {
+        "snow_trees": [280, 650, 1080, 2820, 3210, 3650, 5480, 5820, 6240, 8500, 8900, 9360, 10300, 10720, 11400, 12120, 12620],
+        "houses": [8660, 9120, 10220, 10680],
+        "candies": [9500, 9720, 11050, 11270],
+        "village_huts": [11720, 12410],
+        "ramp": [12500, 13950], "ice_cave": 14250
+      },
+      "breakables": [
+        {"id": "wall_one_a", "kind": "snow_ice_wall", "x": 2100, "y": 465, "health": 4, "blocking": true, "block_radius": 105, "break_notice": "THE ICE WALL SHATTERS"},
+        {"id": "wall_one_b", "kind": "snow_ice_wall", "x": 2100, "y": 540, "health": 4, "blocking": true, "block_radius": 105, "break_notice": "THE ICE WALL SHATTERS"},
+        {"id": "wall_one_c", "kind": "snow_ice_wall", "x": 2100, "y": 610, "health": 4, "blocking": true, "block_radius": 105, "break_notice": "THE ICE WALL SHATTERS"},
+        {"id": "wall_two_a", "kind": "snow_ice_wall", "x": 4800, "y": 465, "health": 4, "blocking": true, "block_radius": 105, "break_notice": "THE ICE WALL SHATTERS"},
+        {"id": "wall_two_b", "kind": "snow_ice_wall", "x": 4800, "y": 540, "health": 4, "blocking": true, "block_radius": 105, "break_notice": "THE ICE WALL SHATTERS"},
+        {"id": "wall_two_c", "kind": "snow_ice_wall", "x": 4800, "y": 610, "health": 4, "blocking": true, "block_radius": 105, "break_notice": "THE ICE WALL SHATTERS"},
+        {"id": "wall_three_a", "kind": "snow_ice_wall", "x": 7200, "y": 455, "health": 5, "blocking": true, "block_radius": 105, "break_notice": "THE ICE WALL SHATTERS"},
+        {"id": "wall_three_b", "kind": "snow_ice_wall", "x": 7200, "y": 505, "health": 5, "blocking": true, "block_radius": 105, "break_notice": "THE ICE WALL SHATTERS"},
+        {"id": "wall_three_c", "kind": "snow_ice_wall", "x": 7200, "y": 555, "health": 5, "blocking": true, "block_radius": 105, "break_notice": "THE ICE WALL SHATTERS"},
+        {"id": "wall_three_d", "kind": "snow_ice_wall", "x": 7200, "y": 610, "health": 5, "blocking": true, "block_radius": 105, "break_notice": "THE ICE WALL SHATTERS"},
+        {"id": "wall_four_a", "kind": "snow_ice_wall", "x": 8050, "y": 490, "health": 4, "blocking": true, "block_radius": 105, "break_notice": "THE ICE WALL SHATTERS"},
+        {"id": "wall_four_b", "kind": "snow_ice_wall", "x": 8050, "y": 575, "health": 4, "blocking": true, "block_radius": 105, "break_notice": "THE ICE WALL SHATTERS"},
+        {"id": "hidden_yeti_hut", "kind": "snow_yeti_hut", "x": 12050, "y": 535, "health": 7,
+          "output": {"type": "pet", "id": "yeti", "name": "Yeti", "x": 12200, "y": 520},
+          "break_notice": "A HIDDEN YETI PET WAS REVEALED"}
+      ],
+      "waves": [
+        {"id": "first_snow_thieves", "trigger_x": 1050, "count": 7,
+          "types": ["ice_thief", "ice_thief", "ice_thief", "ice_thief", "ice_thief_snowball", "ice_thief_snowball", "ice_thief_snowball"],
+          "spawn_points": [[1430, 470], [1590, 530], [1740, 590], [1880, 505], [2310, 465], [2390, 540], [2470, 610]],
+          "entry": "ice_rise", "entry_duration": 1.0},
+        {"id": "second_snow_thieves", "trigger_x": 3500, "count": 8,
+          "types": ["ice_thief", "ice_thief", "ice_thief", "ice_thief", "ice_thief_snowball", "ice_thief_snowball", "ice_thief_snowball", "ice_thief_snowball"],
+          "spawn_points": [[3840, 465], [4000, 525], [4160, 590], [4320, 500], [5020, 455], [5110, 510], [5200, 565], [5290, 615]], "entry": "ice_rise", "entry_duration": 1.0},
+        {"id": "third_ice_thieves", "trigger_x": 5900, "count": 9,
+          "types": ["ice_thief", "ice_thief", "ice_thief", "ice_thief", "ice_thief_snowball", "ice_thief_snowball", "ice_thief_snowball", "ice_thief_snowball", "ice_thief_snowball"],
+          "spawn_points": [[6250, 465], [6410, 530], [6570, 595], [6730, 500], [7440, 445], [7530, 490], [7620, 535], [7710, 580], [7800, 620]], "entry": "ice_rise", "entry_duration": 1.0},
+        {"id": "last_wall_pair", "trigger_x": 7850, "enemy": "ice_thief_snowball", "count": 2,
+          "spawn_points": [[8330, 490], [8430, 575]], "entry": "ice_rise", "entry_duration": 0.75},
+        {"id": "first_village_ambush", "trigger_x": 8950, "enemy": "ice_thief", "count": 4,
+          "spawn_points": [[9320, 455], [9480, 515], [9640, 575], [9800, 615]], "entry": "ice_rise", "entry_duration": 1.0},
+        {"id": "second_village_ambush", "trigger_x": 10600, "enemy": "ice_thief", "count": 4,
+          "spawn_points": [[10980, 465], [11140, 525], [11300, 585], [11460, 505]], "entry": "ice_rise", "entry_duration": 1.0}
+      ],
+      "doors": [{"x": 14250, "y": 515, "radius": 155, "label": "ICE CASTLE", "style": "snow_ice_cave", "target_level": "ice_castle", "requires_clear": true}]
+    }
+  }
+}

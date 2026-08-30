@@ -1,0 +1,15 @@
+{
+  "id": "sand_castle_interior", "name": "Sand Castle Interior", "music": "map", "start_scene": "hall", "unlocks": ["sand_castle_roof"],
+  "scenes": {"hall": {
+    "name": "Sand Castle Interior", "background": "sand_castle_interior", "world_width": 4700,
+    "bounds": [100, 4480, 430, 620], "spawn": [260, 535], "camera_follow": true,
+    "waves": [
+      {"id": "interior_pair", "trigger_x": 1450, "count": 2, "types": ["buff_saracen", "saracen"], "spawn_points": [[1800, 475], [1940, 565]]},
+      {"id": "stair_ambush", "trigger_x": 2400, "after_story": "stair_ambush_reveal", "count": 6, "types": ["buff_chain_guard", "saracen", "saracen", "saracen", "saracen", "buff_chain_guard"], "spawn_points": [[3120, 465], [3020, 530], [2940, 585], [2240, 470], [2140, 570], [2020, 520]], "entries": ["tower_door", "tower_door", "tower_door", "rush_right", "rush_right", "rush_right"]}
+    ],
+    "story_events": [{"id": "stair_ambush_reveal", "trigger_x": 2100, "after_wave_clear": "interior_pair", "camera_x": 2280, "duration": 2.5}],
+    "breakables": [{"id": "tiger_window", "kind": "tiger_window", "x": 950, "y": 455, "health": 1, "requires": "bomb", "break_notice": "TIGER RESCUED", "outputs": [{"type": "pet", "id": "tiger", "name": "Tiger", "x": 1010, "y": 520}]}],
+    "props": {"windows": [650, 950, 1250], "tiger_window": 950, "staircase_x": 4230},
+    "doors": [{"x": 4300, "y": 520, "radius": 125, "label": "ROOF", "target_level": "sand_castle_roof", "requires_clear": true}]
+  }}
+}

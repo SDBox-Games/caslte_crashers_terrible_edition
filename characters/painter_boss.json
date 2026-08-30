@@ -1,0 +1,26 @@
+{
+  "id": "painter_boss",
+  "display_name": "Painter",
+  "title": "Toolbox Artist",
+  "playable": true,
+  "roster_index": 55,
+  "armor": [77, 67, 72],
+  "accent": [232, 224, 195],
+  "glow": [188, 91, 207],
+  "emblem": "PAINT",
+  "texture_dir": "painter_boss",
+  "starting_weapon": "paintbrush",
+  "base_health": 115,
+  "max_mana": 125,
+  "has_magic": true,
+  "magic": {
+    "element": "poison",
+    "texture_dir": "green",
+    "abilities": {
+      "x": {"kind": "projectile", "texture": "projectile", "unlock_magic": 0, "cost": 10, "status": "poison", "status_duration": 4.0},
+      "y": {"kind": "splash", "texture": "splash", "unlock_magic": 2, "cost": 20, "status": "poison", "status_duration": 4.0},
+      "a": {"kind": "jump", "texture": "jump", "unlock_magic": 4, "cost": 16, "status": "poison", "status_duration": 4.0},
+      "b": {"kind": "infusion", "texture": "infusion", "unlock_magic": 6, "cost": 24, "status": "poison", "status_duration": 4.0}
+    }
+  }
+}

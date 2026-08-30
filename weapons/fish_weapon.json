@@ -1,0 +1,5 @@
+{
+  "id": "fish_weapon",
+  "name": "Fish Weapon",
+  "modifiers": {"strength": 0, "defense": 0, "magic": -1, "agility": 0}
+}

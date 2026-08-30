@@ -1,0 +1,16 @@
+{
+  "id": "cult_minion",
+  "display_name": "Cult Minion",
+  "title": "Crystal Cultist",
+  "playable": true,
+  "roster_index": 56,
+  "armor": [42, 29, 56],
+  "accent": [183, 74, 221],
+  "glow": [228, 128, 255],
+  "emblem": "EYE",
+  "texture_dir": "cult_minion",
+  "starting_weapon": "rusty_sword",
+  "base_health": 105,
+  "max_mana": 0,
+  "has_magic": false
+}

@@ -1,0 +1,13 @@
+{
+  "id": "corn_boss", "name": "Corn Boss", "music": "map", "start_scene": "corn_field", "unlocks": ["swamp_village_store"],
+  "scenes": {"corn_field": {
+    "name": "Corn Boss", "background": "corn_boss", "world_width": 3900,
+    "bounds": [80, 3820, 420, 625], "spawn": [190, 545], "camera_follow": true,
+    "allies": [{"x": 500, "y": 490, "name": "PEASANT", "character": "peasant"}, {"x": 610, "y": 580, "name": "PEASANT", "character": "peasant"}],
+    "props": {"corn_rows": [0, 3900], "barn": 3320},
+    "story_events": [{"id": "corn_reveal", "trigger_x": 500, "camera_x": 2100, "duration": 5.8, "effects": [{"at": 3.5, "kind": "shake", "duration": 0.42, "strength": 0.28}]}],
+    "waves": [],
+    "boss": {"kind": "corn_boss", "name": "CORN BOSS", "trigger_x": 650, "x": 2860, "y": 520, "health": 260, "requires_story": "corn_reveal"},
+    "doors": []
+  }}
+}

@@ -1,0 +1,5 @@
+{
+  "id": "rusty_sword",
+  "name": "Rusty Sword",
+  "modifiers": {"strength": 1, "defense": 0, "magic": 0, "agility": 0}
+}

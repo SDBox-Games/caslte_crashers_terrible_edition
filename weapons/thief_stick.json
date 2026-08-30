@@ -1,0 +1,5 @@
+{
+  "id": "thief_stick",
+  "name": "Thief Stick",
+  "modifiers": {"strength": -1, "defense": -1, "magic": -1, "agility": 1}
+}

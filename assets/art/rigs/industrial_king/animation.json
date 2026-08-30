@@ -1,0 +1,38 @@
+{
+  "id": "industrial_king",
+  "asset_prefix": "characters/industrial_king",
+  "animations": {
+    "idle": {"duration": 1.4, "loop": true, "layers": [
+      {"part":"leg_left","offset":[-24,56],"keyframes":[{"time":0},{"time":0.7,"rotation":2},{"time":1.4}]},
+      {"part":"leg_right","offset":[24,56],"keyframes":[{"time":0},{"time":0.7,"rotation":-2},{"time":1.4}]},
+      {"part":"body","offset":[0,-12],"keyframes":[{"time":0},{"time":0.7,"y":-3},{"time":1.4}]},
+      {"part":"arm_left","offset":[-66,-2],"keyframes":[{"time":0,"rotation":-5},{"time":0.7,"rotation":4},{"time":1.4,"rotation":-5}]},
+      {"part":"arm_right","offset":[66,-2],"keyframes":[{"time":0,"rotation":5},{"time":0.7,"rotation":-4},{"time":1.4,"rotation":5}]},
+      {"part":"head","offset":[0,-94],"keyframes":[{"time":0},{"time":0.7,"y":-3},{"time":1.4}]}
+    ]},
+    "laugh": {"duration": 0.7, "loop": true, "layers": [
+      {"part":"leg_left","offset":[-24,56],"keyframes":[{"time":0},{"time":0.35,"rotation":5},{"time":0.7}]},
+      {"part":"leg_right","offset":[24,56],"keyframes":[{"time":0},{"time":0.35,"rotation":-5},{"time":0.7}]},
+      {"part":"body","offset":[0,-12],"keyframes":[{"time":0,"rotation":-3},{"time":0.35,"y":-9,"rotation":3},{"time":0.7,"rotation":-3}]},
+      {"part":"arm_left","offset":[-70,-8],"keyframes":[{"time":0,"rotation":-38},{"time":0.35,"rotation":-15},{"time":0.7,"rotation":-38}]},
+      {"part":"arm_right","offset":[70,-8],"keyframes":[{"time":0,"rotation":38},{"time":0.35,"rotation":15},{"time":0.7,"rotation":38}]},
+      {"part":"head","offset":[0,-94],"keyframes":[{"time":0,"rotation":-4},{"time":0.35,"y":-10,"rotation":4},{"time":0.7,"rotation":-4}]}
+    ]},
+    "scared": {"duration": 0.25, "loop": true, "layers": [
+      {"part":"leg_left","offset":[-24,56],"keyframes":[{"time":0,"x":-3},{"time":0.125,"x":3},{"time":0.25,"x":-3}]},
+      {"part":"leg_right","offset":[24,56],"keyframes":[{"time":0,"x":-3},{"time":0.125,"x":3},{"time":0.25,"x":-3}]},
+      {"part":"body","offset":[0,-12],"keyframes":[{"time":0,"x":-3},{"time":0.125,"x":3},{"time":0.25,"x":-3}]},
+      {"part":"arm_left","offset":[-66,-2],"keyframes":[{"time":0,"rotation":-58},{"time":0.25,"rotation":-58}]},
+      {"part":"arm_right","offset":[66,-2],"keyframes":[{"time":0,"rotation":58},{"time":0.25,"rotation":58}]},
+      {"part":"head_eyebig","offset":[0,-94],"keyframes":[{"time":0,"x":-3},{"time":0.125,"x":3},{"time":0.25,"x":-3}]}
+    ]},
+    "run": {"duration": 0.52, "loop": true, "layers": [
+      {"part":"leg_left","offset":[-24,56],"keyframes":[{"time":0,"rotation":-24},{"time":0.26,"rotation":24},{"time":0.52,"rotation":-24}]},
+      {"part":"leg_right","offset":[24,56],"keyframes":[{"time":0,"rotation":24},{"time":0.26,"rotation":-24},{"time":0.52,"rotation":24}]},
+      {"part":"body","offset":[0,-12],"keyframes":[{"time":0,"rotation":7},{"time":0.26,"y":-7,"rotation":7},{"time":0.52,"rotation":7}]},
+      {"part":"arm_left","offset":[-66,-2],"keyframes":[{"time":0,"rotation":30},{"time":0.26,"rotation":-30},{"time":0.52,"rotation":30}]},
+      {"part":"arm_right","offset":[66,-2],"keyframes":[{"time":0,"rotation":-30},{"time":0.26,"rotation":30},{"time":0.52,"rotation":-30}]},
+      {"part":"head_eyebig","offset":[0,-94],"keyframes":[{"time":0},{"time":0.26,"y":-7},{"time":0.52}]}
+    ]}
+  }
+}

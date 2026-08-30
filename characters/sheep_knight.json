@@ -1,0 +1,16 @@
+{
+  "id": "sheep_knight",
+  "display_name": "Sheep Knight",
+  "title": "Cat Fish Rider",
+  "playable": true,
+  "roster_index": 9,
+  "armor": [91, 96, 99],
+  "accent": [224, 218, 190],
+  "glow": [248, 232, 177],
+  "emblem": "WOOL",
+  "texture_dir": "sheep_knight",
+  "starting_weapon": "rusty_sword",
+  "base_health": 110,
+  "max_mana": 0,
+  "has_magic": false
+}

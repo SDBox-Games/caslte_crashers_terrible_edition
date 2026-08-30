@@ -1,0 +1,5 @@
+{
+  "id": "moon_blade",
+  "name": "Moon Blade",
+  "modifiers": {"strength": 2, "defense": 1, "magic": 2, "agility": 0}
+}

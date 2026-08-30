@@ -1,0 +1,26 @@
+{
+  "id": "fire",
+  "display_name": "Fire",
+  "title": "Fire Knight",
+  "playable": true,
+  "roster_index": 2,
+  "armor": [225, 107, 28],
+  "accent": [255, 193, 45],
+  "glow": [255, 115, 48],
+  "emblem": "FLAME",
+  "texture_dir": "fire",
+  "starting_weapon": "rusty_sword",
+  "base_health": 100,
+  "max_mana": 100,
+  "has_magic": true,
+  "magic": {
+    "element": "fire",
+    "texture_dir": "fire",
+    "abilities": {
+      "x": {"kind": "projectile", "texture": "projectile", "unlock_magic": 0, "cost": 10, "status": "burn", "status_duration": 4.0, "status_damage": 1, "status_interval": 0.65},
+      "y": {"kind": "splash", "texture": "splash", "unlock_magic": 2, "cost": 20, "status": "burn", "status_duration": 4.0, "status_damage": 1, "status_interval": 0.65},
+      "a": {"kind": "jump", "texture": "jump", "unlock_magic": 4, "cost": 16, "status": "burn", "status_duration": 4.0, "status_damage": 1, "status_interval": 0.65},
+      "b": {"kind": "infusion", "texture": "infusion", "unlock_magic": 6, "cost": 24, "status": "burn", "status_duration": 4.0, "status_damage": 1, "status_interval": 0.65}
+    }
+  }
+}

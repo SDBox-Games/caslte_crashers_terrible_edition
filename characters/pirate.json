@@ -1,0 +1,16 @@
+{
+  "id": "pirate",
+  "display_name": "Pirate",
+  "title": "Sea Raider",
+  "playable": true,
+  "roster_index": 55,
+  "armor": [58, 62, 70],
+  "accent": [174, 43, 38],
+  "glow": [238, 190, 75],
+  "emblem": "SKULL",
+  "texture_dir": "pirate",
+  "starting_weapon": "rusty_sword",
+  "base_health": 105,
+  "max_mana": 0,
+  "has_magic": false
+}

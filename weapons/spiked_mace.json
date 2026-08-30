@@ -1,0 +1,5 @@
+{
+  "id": "spiked_mace",
+  "name": "Spiked Mace",
+  "modifiers": {"strength": 3, "defense": 1, "magic": -1, "agility": -1}
+}

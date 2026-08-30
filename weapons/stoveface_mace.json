@@ -1,0 +1,4 @@
+{
+  "id": "stoveface_mace", "name": "Stoveface Mace",
+  "modifiers": {"strength": 3, "defense": 1, "magic": -1, "agility": -1}
+}

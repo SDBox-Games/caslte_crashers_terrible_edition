@@ -1,0 +1,26 @@
+{
+  "id": "green",
+  "display_name": "Green",
+  "title": "Poison Knight",
+  "playable": true,
+  "roster_index": 3,
+  "armor": [54, 124, 70],
+  "accent": [139, 202, 75],
+  "glow": [136, 246, 141],
+  "emblem": "POISON",
+  "texture_dir": "green",
+  "starting_weapon": "rusty_sword",
+  "base_health": 105,
+  "max_mana": 100,
+  "has_magic": true,
+  "magic": {
+    "element": "poison",
+    "texture_dir": "green",
+    "abilities": {
+      "x": {"kind": "projectile", "texture": "projectile", "unlock_magic": 0, "cost": 10, "status": "poison", "status_duration": 5.0, "status_damage": 1, "status_interval": 1.0},
+      "y": {"kind": "splash", "texture": "splash", "unlock_magic": 2, "cost": 20, "status": "poison", "status_duration": 5.0, "status_damage": 1, "status_interval": 1.0},
+      "a": {"kind": "jump", "texture": "jump", "unlock_magic": 4, "cost": 16, "status": "poison", "status_duration": 5.0, "status_damage": 1, "status_interval": 1.0},
+      "b": {"kind": "infusion", "texture": "infusion", "unlock_magic": 6, "cost": 24, "status": "poison", "status_duration": 5.0, "status_damage": 1, "status_interval": 1.0}
+    }
+  }
+}

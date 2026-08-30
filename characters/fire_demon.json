@@ -1,0 +1,16 @@
+{
+  "id": "fire_demon",
+  "display_name": "Fire Demon",
+  "title": "Fortress Demon",
+  "playable": false,
+  "roster_index": 43,
+  "armor": [132, 45, 37],
+  "accent": [246, 113, 35],
+  "glow": [255, 191, 63],
+  "emblem": "FIRE",
+  "texture_dir": "fire_demon",
+  "starting_weapon": "spiked_mace",
+  "base_health": 145,
+  "max_mana": 0,
+  "has_magic": false
+}

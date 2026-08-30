@@ -1,0 +1,6 @@
+{
+  "id": "ice_thief", "display_name": "Ice Thief", "title": "Frozen Baghead", "playable": true, "roster_index": 53,
+  "armor": [53, 104, 154], "accent": [172, 220, 239], "glow": [126, 221, 255], "emblem": "ICE",
+  "texture_dir": "ice_thief", "starting_weapon": "thief_stick", "base_health": 95, "max_mana": 70,
+  "has_magic": true, "magic": {"element": "ice", "texture_dir": "ice"}
+}

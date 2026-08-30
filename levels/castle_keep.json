@@ -1,0 +1,27 @@
+{
+  "id": "castle_keep",
+  "name": "Castle Keep",
+  "music": "castle_keep",
+  "start_scene": "keep_shop",
+  "unlocks": ["blacksmith", "arena", "barbarian_war"],
+  "scenes": {
+    "keep_shop": {
+      "name": "Castle Keep",
+      "background": "castle_keep_shop",
+      "world_width": 2350,
+      "bounds": [80, 2270, 430, 625],
+      "spawn": [170, 548],
+      "camera_follow": true,
+      "waves": [
+        {"id": "keep_raid", "trigger_x": 360, "enemy": "barbarian", "count": 7, "spawn_points": [[620, 515], [700, 580], [820, 530], [930, 590], [1050, 500], [1160, 570], [1280, 525]]}
+      ],
+      "shop": [
+        {"id": "health_potion", "name": "Health Potion", "x": 1530, "y": 530, "cost": 5, "maximum": 5},
+        {"id": "keep_sword", "name": "Castle Keep Sword", "x": 1745, "y": 530, "cost": 15}
+      ],
+      "doors": [
+        {"x": 2185, "y": 505, "radius": 100, "label": "WORLD MAP", "target": "keep_shop", "requires_clear": true, "complete_level": true}
+      ]
+    }
+  }
+}

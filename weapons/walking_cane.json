@@ -1,0 +1,5 @@
+{
+  "id": "walking_cane",
+  "name": "Old Walking Cane",
+  "modifiers": {"strength": 0, "defense": 1, "magic": 0, "agility": 1}
+}

@@ -1,0 +1,4 @@
+{
+  "id": "fish_spear", "name": "Fish Spear",
+  "modifiers": {"strength": 1, "defense": 0, "magic": 1, "agility": 0}
+}

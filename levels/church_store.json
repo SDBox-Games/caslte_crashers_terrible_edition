@@ -1,0 +1,28 @@
+{
+  "id": "church_store",
+  "name": "Church Store",
+  "music": "thieves_store",
+  "start_scene": "church_shop",
+  "unlocks": [],
+  "scenes": {
+    "church_shop": {
+      "name": "Church Store",
+      "background": "church_store",
+      "world_width": 2100,
+      "bounds": [80, 2020, 430, 625],
+      "spawn": [170, 545],
+      "camera_follow": true,
+      "waves": [],
+      "shop": [
+        {"id": "walking_cane", "name": "Old Walking Cane", "collection": "weapons", "x": 390, "y": 530, "cost": 12},
+        {"id": "health_potion", "name": "Health Potion", "collection": "items", "x": 730, "y": 530, "cost": 5, "maximum": 5},
+        {"id": "alien_hominid_weapon", "name": "Alien Hominid Blaster", "collection": "weapons", "x": 1120, "y": 530, "cost": 25},
+        {"id": "monkey", "name": "Monkey", "collection": "pets", "x": 1500, "y": 530, "cost": 20}
+      ],
+      "props": {"shopkeeper": 940},
+      "doors": [
+        {"x": 1980, "y": 515, "radius": 95, "label": "WORLD MAP", "complete_level": true}
+      ]
+    }
+  }
+}

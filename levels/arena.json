@@ -1,0 +1,22 @@
+{
+  "id": "arena",
+  "name": "Arena",
+  "music": "arena",
+  "start_scene": "pit",
+  "mode": "arena",
+  "scenes": {
+    "pit": {
+      "name": "The Arena",
+      "background": "arena",
+      "world_width": 1500,
+      "bounds": [90, 1410, 400, 625],
+      "spawn": [350, 545],
+      "camera_follow": true,
+      "singleplayer_horde": {
+        "enemy": "barbarian",
+        "maximum": 9,
+        "interval": 1.35
+      }
+    }
+  }
+}

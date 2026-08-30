@@ -1,0 +1,59 @@
+{
+  "id": "ice_castle", "name": "Ice Castle", "music": "map", "start_scene": "entrance_hall", "unlocks": ["wizard_castle_takeoff"],
+  "scenes": {
+    "entrance_hall": {
+      "name": "Ice Castle · Entrance Hall", "background": "ice_castle_hall", "world_width": 6400,
+      "bounds": [80, 6320, 420, 625], "spawn": [230, 545], "camera_follow": true,
+      "props": {
+        "entrance_arch": 150, "torches": [850, 2050, 3300, 4580, 5500], "button_nuke": 1420,
+        "cabinets": [2730, 3820, 4850], "stairs": 6020
+      },
+      "breakables": [
+        {"id": "meat_cabinet", "kind": "ice_cabinet", "x": 2730, "y": 530, "health": 4,
+          "output": {"type": "food", "id": "hall_meat", "kind": "meat", "x": 2730, "y": 520, "heal_amount": 90}, "break_notice": "THE CABINET DROPPED MEAT"},
+        {"id": "fruit_cabinet", "kind": "ice_cabinet", "x": 3820, "y": 530, "health": 4,
+          "output": {"type": "random_food", "id": "hall_food", "x": 3820, "y": 520}, "break_notice": "THE CABINET DROPPED FOOD"},
+        {"id": "supply_cabinet", "kind": "ice_cabinet", "x": 4850, "y": 530, "health": 4,
+          "outputs": [{"type": "food", "id": "hall_meat_two", "kind": "meat", "x": 4820, "y": 520, "heal_amount": 90}, {"type": "food", "id": "hall_pear", "kind": "pear", "x": 4900, "y": 520, "heal_amount": 55}], "break_notice": "THE CABINET DROPPED SUPPLIES"}
+      ],
+      "waves": [],
+      "doors": [{"x": 6020, "y": 515, "radius": 140, "label": "UPPER HALL", "style": "ice_stairs", "target": "upper_hall", "target_spawn": [210, 545]}]
+    },
+    "upper_hall": {
+      "name": "Ice Castle · Upper Hall", "background": "ice_castle_upper", "world_width": 4700,
+      "bounds": [80, 4620, 420, 625], "spawn": [210, 545], "camera_follow": true,
+      "props": {"stacked_cabinets": 900, "torches": [1500, 3250], "princess": 2650, "wooden_wall": 4120},
+      "breakables": [
+        {"id": "bottom_cabinet", "kind": "ice_cabinet", "x": 900, "y": 555, "health": 5,
+          "outputs": [{"type": "food", "id": "upper_meat", "kind": "meat", "x": 840, "y": 540, "heal_amount": 90}, {"type": "weapon", "id": "meat_sword", "name": "Meat Sword", "x": 960, "y": 525}], "break_notice": "MEAT AND A MEAT SWORD FELL OUT"},
+        {"id": "top_cabinet", "kind": "ice_cabinet", "x": 900, "y": 555, "health": 5,
+          "output": {"type": "pet", "id": "blue_ox", "name": "Blue Ox", "x": 1080, "y": 520}, "break_notice": "THE BLUE OX PET JUMPS OUT"},
+        {"id": "wooden_bridge_wall", "kind": "ice_wooden_wall", "x": 4120, "y": 520, "health": 8, "blocking": true, "block_radius": 115, "break_notice": "THE WOODEN WALL BREAKS APART"}
+      ],
+      "story_events": [{"id": "princess_teleport", "trigger_x": 2050, "camera_x": 2050, "duration": 6.2,
+        "effects": [{"at": 2.0, "kind": "shake", "duration": 0.2, "strength": 0.15}, {"at": 4.1, "kind": "shake", "duration": 0.45, "strength": 0.4}]}],
+      "waves": [],
+      "doors": [{"x": 4280, "y": 515, "radius": 145, "label": "ICE BRIDGE", "style": "broken_wood_passage", "target": "ice_bridge", "target_spawn": [190, 545], "requires_story": "princess_teleport", "requires_flag": "breakable:wooden_bridge_wall"}]
+    },
+    "ice_bridge": {
+      "name": "Ice Castle · Frozen Bridge", "background": "ice_castle_bridge", "world_width": 5400,
+      "bounds": [80, 5320, 465, 590], "spawn": [190, 535], "camera_follow": true,
+      "props": {"platform": 250, "bridge": [650, 4320], "angry_door": 5000, "ice_king": 4380, "archers": [4540, 4700, 4860]},
+      "story_events": [{"id": "bridge_attack", "trigger_x": 620, "camera_x": 3740, "duration": 6.4,
+        "effects": [{"at": 2.6, "kind": "shake", "duration": 0.55, "strength": 0.45}, {"at": 4.2, "kind": "shake", "duration": 0.25, "strength": 0.22}]}],
+      "waves": [{"id": "bridge_archers", "trigger_x": 3600, "after_story": "bridge_attack", "enemy": "ice_thief_archer", "count": 3,
+        "spawn_points": [[4540, 485], [4700, 535], [4860, 580]], "entry": "ice_rise", "entry_duration": 0.8}],
+      "doors": [{"x": 5000, "y": 515, "radius": 150, "label": "ICE KING", "style": "angry_ice_door", "target": "king_arena", "target_spawn": [250, 545], "requires_story": "bridge_attack", "requires_clear": true}]
+    },
+    "king_arena": {
+      "name": "Ice Castle · Ice King", "background": "ice_castle_arena", "world_width": 2900,
+      "bounds": [100, 2800, 420, 625], "spawn": [250, 545], "camera_follow": true,
+      "props": {"entrance_door": 120, "rescue_princess": 2420, "ice_throne": 2100},
+      "story_events": [{"id": "ice_king_arrival", "trigger_x": 420, "camera_x": 1180, "duration": 3.4,
+        "effects": [{"at": 1.15, "kind": "shake", "duration": 0.45, "strength": 0.48}]}],
+      "waves": [],
+      "boss": {"kind": "ice_king", "name": "ICE KING", "trigger_x": 500, "x": 2120, "y": 535, "health": 300, "requires_clear": true, "requires_story": "ice_king_arrival"},
+      "doors": []
+    }
+  }
+}

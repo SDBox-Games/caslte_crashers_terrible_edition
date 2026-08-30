@@ -1,0 +1,5 @@
+{
+  "id": "wooden_bat",
+  "name": "Wooden Bat",
+  "modifiers": {"strength": 2, "defense": 0, "magic": -1, "agility": 1}
+}

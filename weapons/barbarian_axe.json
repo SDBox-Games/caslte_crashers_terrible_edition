@@ -1,0 +1,5 @@
+{
+  "id": "barbarian_axe",
+  "name": "Barbarian Axe",
+  "modifiers": {"strength": 2, "defense": 0, "magic": 0, "agility": 0}
+}
